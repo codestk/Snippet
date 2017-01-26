@@ -1,0 +1,205 @@
+﻿@item.GetCropUrl("image", "avatar" )"
+==================================================================
+var items = (dynamic)null;
+
+
+    if (Type == "OnView")
+    {
+        condition = "  Visible && (beginDate <= Todate) && (endDate >= Todate)";
+
+
+        items = Umbraco.Media(blogId).Children().Where(condition, valuesFilter).OrderBy("beginDate");
+
+
+    }
+
+
+=====================================================================
+ if (ShowAuto.Equals("1"))
+{
+@Umbraco.Field("#Now")
+
+
+================================================================
+null
+
+
+Model.MacroParameters["Exhibition"]==""
+==================================================================
+var TextHead = Model.MacroParameters["TextHead"];   
+    @{if (TextHead !=null)
+    {
+    <h1>@TextHead </h1>
+    }
+    }
+
+
+=====================================================================
+
+
+Dictinary
+@Umbraco.Field("#Now")
+
+
+
+
+================================
+//Check  No data 
+    var mediaNode = Umbraco.TypedMedia(mediaId);
+  if (mediaNode !=null)
+    {
+}
+
+
+=====================================================================
+Where Date
+
+
+var values = new Dictionary<string,object>();
+values.Add("queryStartDate", DateTime.Parse(Request["queryStartDate"])) ;
+values.Add("queryEndDate", DateTime.Parse(Request["queryEndDate"])) ;
+var results = Model.Children.Where("newsDate > queryStartDate && newsDate < queryEndDate", values);
+
+
+=====================================================================
+GetData
+public JsonResult Get(string mediaID, string lang, string imageName)
+        {
+            string nameLower=imageName.ToLower();
+            string filter =$"imageName.ToLower() = \"{nameLower}.jpg\"";
+            var media = Umbraco.Media(mediaID).Children().Where(filter);
+ 
+            List<object> jsonDataList =DataConversion.ConvertToJsonObject(media);
+ 
+         //= exObj as IDictionary<string, object>;
+ 
+            return Json(jsonDataList, JsonRequestBehavior.AllowGet);
+        }
+
+
+
+
+
+
+=====================================================================
+ public static List<object> ConvertToJsonObject(dynamic media)
+        {
+            List<object> jsonDataList = new List<object>();
+            foreach (var mediaItem in media)
+            {
+                var columns = new Dictionary<string, object>();
+ 
+                foreach (Umbraco.Core.Models.IPublishedProperty item in mediaItem.Properties)
+                {
+                    string name = item.PropertyTypeAlias;
+ 
+                    object val = null;
+ 
+                    val = item.DataValue.ToString().Replace("\r\n", "");
+ 
+                    columns.Add(name, val);
+                }
+ 
+                jsonDataList.Add(columns);
+            }
+            return jsonDataList;
+        }
+=====================================================================
+@functions {
+
+
+ 
+   
+          List<object> ConvertToJsonObject(dynamic media)
+        {
+            List<object> jsonDataList = new List<object>();
+            foreach (var mediaItem in media)
+            {
+                var columns = new Dictionary<string, object>();
+ 
+                foreach (Umbraco.Core.Models.IPublishedProperty item in mediaItem.Properties)
+                {
+                    string name = item.PropertyTypeAlias;
+ 
+                    object val = null;
+ 
+                    val = item.DataValue.ToString().Replace("\r\n", "");
+ 
+                    columns.Add(name, val);
+                }
+ 
+                jsonDataList.Add(columns);
+            }
+            return jsonDataList;
+        }
+
+
+}
+=====================================================================
+  
+var items =  Umbraco.Media(1122).Children().OrderBy("CreateDate descending");  << Node รูป
+
+
+ var items = Umbraco.Content(1122).Children().OrderBy("CreateDate descending");  << Blog
+
+
+=====================================================================
+  @{
+   //Fetch the blogposts from a certain node id
+   var blogPosts = Umbraco.Content(1081);
+
+
+  foreach(var blogPost in blogPosts.Children().OrderBy("CreateDate desc").Take(3)){
+
+
+        <div class="date">@blogPost.CreateDate.ToLongDateString()</div>
+        <h2><a href="@blogPost.NiceUrl()">@blogPost.Name</a></h2>       
+        <!--<p>@Umbraco.Truncate(blogPost.Introduction, 0, true)</p>-->
+
+
+  }
+
+
+=====================================================================
+ดู เลข Drop down
+   var dataType = Services.DataTypeService.GetDataTypeDefinitionByName("ArtPieceTypes");
+
+
+                        var preValuesFromDataType = umbraco.library.GetPreValues(dataType.Id);
+                        mediaPiceImage.SetValue("artPieceType", rdr["ArtPieceTypeID"]);
+
+
+=====================================================================
+Where String   
+condition += "||(ArtPiecesIDXX =\"" + dr["ArtPieceID"] + "\")";
+=====================================================================
+เลือก Type หลาน
+  var items = Umbraco.Media(1366).Descendants("artPiecesMedia").Where(condition).ToList();
+=====================================================================
+Get Properties 
+ @Html.Raw(item.First().GetPropertyValue("artPieces2"));
+
+
+=====================================================================
+Get Crop  
+<img class="img-circle img-responsive img-center" src="@item.GetCropUrl("image", "Logo")" alt="@item.nameEn" />
+
+
+=====================================================================
+Check Box Parameter Macro
+ var AnnouncementId = Model.MacroParameters["Announcement"];
+   var showAnnouncementOnly =Model.MacroParameters["showAnnouncementOnly"];
+   var showText =Model.MacroParameters["showText"];
+    var items = (dynamic)null;
+ 
+    if    (showAnnouncementOnly.Equals("1"))
+    {
+    string a="123456";
+    }
+Check Type
+
+
+     if (item.DocumentTypeAlias == "artPiecesMedia")
+
+
+=====================================================================

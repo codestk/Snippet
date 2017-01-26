@@ -1,0 +1,1962 @@
+﻿random string with parameter
+  string a = "1,2,3,4,5,6";
+            string[] ab = a.Split(',');
+          string b=  String.Concat(ab.OrderBy(c => c),",");
+
+
+            var reversedStr = string.Join(",", a.Split(',').OrderBy(x => Guid.NewGuid()));
+
+
+            Console.Write(reversedStr);
+            Console.ReadLine();
+===================================================================
+
+
+
+
+innit var
+ var items = (dynamic)null; 
+
+
+=====================================================================
+Imports System
+Imports System.Text.RegularExpressions
+
+
+''' <summary>
+''' Summary description for ValidatePassword.
+''' </summary>
+Public Class ValidatePassword
+
+
+
+
+    Public Sub New()
+    End Sub
+
+
+    '- µéÍ§ÁÕÂÒÇäÁè¹éÍÂ¡ÇèÒ 8 µÑÇÍÑ¡ÉÃ
+    '- µéÍ§ÁÕ¤ÇÒÁÂÒÇäÁèÁÒ¡à¡Ô¹¡ÇèÒ 32 µÑÇÍÑ¡ÉÃ
+    '- µéÍ§»ÃÐ¡Íº´éÇÂµÑÇÍÑ¡ÉÃ ÍÂèÒ§¹éÍÂ 1 µÑÇÍÑ¡ÉÃ
+    '- µÑÇÍÑ¡ÉÃµéÍ§à»ç¹ÀÒÉÒÍÑ§¡ÄÉà·èÒ¹Ñé¹
+    '- µéÍ§»ÃÐ¡Íº´éÇÂµÑÇàÅ¢ ÍÂèÒ§¹éÍÂ 1 ËÅÑ¡
+    '- ÊÒÁÒÃ¶ÁÕÊÑ­ÅÑ¡É³ì¾ÔàÈÉÍ×è¹ æ ä´é Â¡àÇé¹ “%”, “&”, “+”
+    Public Shared Function IsValidPassword(ByVal Password As String) As Boolean
+         Return (Regex.IsMatch(Password, "^(?=.*[a-z])(?=.*[@$%^&+=\d]).{8,32}$")) AndAlso Not Regex.IsMatch(Password, "[%&\+]") AndAlso Not Regex.IsMatch(Password, "[\u0E01-\u0E5B]")
+    End Function
+
+
+
+
+End Class
+===============================================================================================
+New Items
+
+
+ foreach (Funds f in usrProfile.Fundses)
+            {
+
+
+                var inquiry = new Inquiry
+                {
+                    FundName = f.FundThaiName,
+                    Choice = "momojojo",
+                    MakeDateTime = new DateTime(),
+                    Risk = "¤ÇÒÁàÊÕèÂ§ÊÙ§ÁÒ¡",
+                    NextDateTime = new DateTime().AddDays(30)
+                };
+
+
+                inquiryList.Add(inquiry);
+            }
+
+
+=======================================================================================================
+Tabl To list Comma
+CREATE FUNCTION udf_recursive ( @cid INT, @i INT )
+RETURNS VARCHAR(8000) AS BEGIN
+        DECLARE @r VARCHAR(8000), @l VARCHAR(8000)
+        SELECT @i = @i - 1,  @r = ProductName + ', '
+          FROM Northwind..Products p1
+         WHERE CategoryId = @cid
+           AND @i = ( SELECT COUNT(*) FROM Northwind..Products p2
+                       WHERE p2.CategoryId = p1.CategoryId
+                         AND p2.ProductName <= p1.ProductName ) ;
+        IF @i > 0 BEGIN
+              EXEC @l = dbo.udf_recursive @cid, @i ;
+              SET @r =  @l + @r ;
+END
+RETURN @r ;
+END
+======================================================
+µÑÇàÅ¢ ÍÂèÒ§à´ÕÂÇ  13 ËÅÑ¡
+  var rexPersonal = new Regex(@"^[0-9]{13}$");
+            if (rexPersonal.IsMatch(pid))
+            {
+==================================================================
+    //in=  "aaa,dddd,cccc"
+        //out= "'aaa','dddd','cccc'"
+        public static string SetSingleQuote(string str)
+        {
+            string[] temp = str.TrimEnd(',').Split(',');
+            string output = "";
+            foreach (string a in temp)
+            {
+                output += "'" + a + "',";
+
+
+            }
+            output = output.Trim(',');
+            return output;
+        }
+
+
+====================================================================================================================
+check null
+string KK = DataBinder.Eval(e.Row.DataItem, "Name").GetType() == typeof(System.DBNull) ? "" : (string)DataBinder.Eval(e.Row.DataItem, "Name")
+====================================================================================================================
+Link Column Object
+   var query = (from temp in ds.Tables[0].AsEnumerable()
+                         //where temp.Field<string>("EnglishCountry") != null
+                         select new  PRODUCT_DETAILS
+                         {
+                             PRODUCT_DETAILS_ID = temp.Field<Int32>("PRODUCT_DETAILS_ID"),
+                             PRODUCT_DETAILS_NAME = temp.Field<String>("PRODUCT_DETAILS_NAME"),
+                             FOOD_TYPE_ID = temp.Field<Int32>("FOOD_TYPE_ID"),
+                             GOOD_TYPE_ID = temp.Field<Int32>("GOOD_TYPE_ID"),
+                             BRAND_TYPE_ID = temp.Field<Int32>("BRAND_TYPE_ID"),
+                             UNIT_TASTE_ID = temp.Field<Int32>("UNIT_TASTE_ID"),
+                             UNIT_SIZE_ID = temp.Field<Int32>("UNIT_SIZE_ID"),
+                             UNIT_ITEMS_UNIT = temp.Field<Int32>("UNIT_ITEMS_UNIT"),
+                             UNIT_WEIGHT_UNIT = temp.Field<Double>("UNIT_WEIGHT_UNIT"),
+                             PRODUCT_DETAILS_PRICE = temp.Field<Double>("PRODUCT_DETAILS_PRICE"),
+                             PRODUCT_DETAILS_ACTIVE = temp.Field<String>("PRODUCT_DETAILS_ACTIVE"),
+
+
+                             UNIT_SIZE = new UNIT_SIZE() { UNIT_SIZE_ID = temp.Field<int>("UNIT_SIZE_ID"), UNIT_SIZE_NAME = temp.Field<string>("UNIT_SIZE_NAME") }
+                             //((temp.Field<DateTime?>("EM_UPDATE") == null) ? temp.Field("EM_UPDATE") : temp.Field("EM_UPDATE"))
+                         });
+            return query.ToArray();
+========================================================================================================================
+  List<FbParameter> para = new List<FbParameter> {new FbParameter(":EM_ID", username.Trim())};
+==========================================================
+Link null
+    ((temp.Field<DateTime?>("EM_UPDATE") == null) ? temp.Field("EM_UPDATE") : temp.Field("EM_UPDATE"))
+======================================================================
+µÑ´¤Óä·Â
+ICU4NET-0.0.3
+private List<string> WordBreak(string text)
+{
+    var sb = new StringBuilder();
+    var col = new List<string>();
+
+
+    using (BreakIterator bi = BreakIterator.CreateWordInstance(Locale.GetUS()))
+    {
+        bi.SetText(text);
+        int start = bi.First(), end = bi.Next();
+        while (end != BreakIterator.DONE)
+        {
+            col.Add(text.Substring(start, end - start));
+            start = end; end = bi.Next();
+        }
+    }
+
+
+    return col;
+}
+=======================================================================
+use function word
+                    Type word = Type.GetTypeFromProgID("Word.Application");
+                    if (word != null)
+                    {
+                        // Word is installed
+                    }
+=============================================================================
+String.Format("{0:y yy yyy yyyy}", dt);  // "8 08 008 2008"   year
+String.Format("{0:M MM MMM MMMM}", dt);  // "3 03 Mar March"  month
+String.Format("{0:d dd ddd dddd}", dt);  // "9 09 Sun Sunday" day
+String.Format("{0:h hh H HH}",     dt);  // "4 04 16 16"      hour 12/24
+String.Format("{0:m mm}",          dt);  // "5 05"            minute
+String.Format("{0:s ss}",          dt);  // "7 07"            second
+String.Format("{0:f ff fff ffff}", dt);  // "1 12 123 1230"   sec.fraction
+String.Format("{0:F FF FFF FFFF}", dt);  // "1 12 123 123"    without zeroes
+String.Format("{0:t tt}",          dt);  // "P PM"            A.M. or P.M.
+String.Format("{0:z zz zzz}",      dt);  // "-6 -06 -06:00"   time zone
+
+
+===========================================================
+Thai Db Code
+Thai
+0x41e
+Thai_CI_AS
+874
+========================================================
+   private void button1_Click(object sender, EventArgs e)
+        {
+            using (var bitmap = new Bitmap(@"C:\imgpr\nature\beach\0001_nature_beach_1200_1600.jpg"))
+            {
+                var colorsWithCount = GetPixels(bitmap)
+                        .GroupBy(color => color)
+                        .Select(grp =>
+                            new
+                            {
+                                Color = grp.Key,
+                                Count = grp.Count()
+                            })
+                        .OrderByDescending(x => x.Count)
+                        .Take(5);
+
+
+                foreach (var colorWithCount in colorsWithCount)
+                {
+                    Console.WriteLine("Color {0}, count: {1} , {2}",
+                        colorWithCount.Color, colorWithCount.Count, Classify(colorWithCount.Color));
+                }
+            }
+        }
+
+
+
+
+        public string Classify(Color c)
+        {
+            float hue = c.GetHue();
+            float sat = c.GetSaturation();
+            float lgt = c.GetBrightness();
+
+
+            if (lgt < 0.2) return "Blacks";
+            if (lgt > 0.8) return "Whites";
+
+
+            if (sat < 0.25) return "Grays";
+
+
+            if (hue < 30) return "Reds";
+            if (hue < 90) return "Yellows";
+            if (hue < 150) return "Greens";
+            if (hue < 210) return "Cyans";
+            if (hue < 270) return "Blues";
+            if (hue < 330) return "Magentas";
+            return "Reds";
+        }
+
+
+        public static IEnumerable<Color> GetPixels(Bitmap bitmap)
+        {
+            for (int x = 0; x < bitmap.Width; x++)
+            {
+                for (int y = 0; y < bitmap.Height; y++)
+                {
+                    Color pixel = bitmap.GetPixel(x, y);
+                    yield return pixel;
+                }
+            }
+        }
+===========================================================================================
+<script language="javascript">
+        function fixLen(noLen) {
+                if (document.forms[0].RegistPrivate1_taRequestNote.value.length == noLen) {                        
+                        window.event.keyCode = 0;
+                }
+        }
+</script>
+
+
+<TEXTAREA class="label" onkeypress="fixLen(255);" id="taRequestNote" tabIndex="36" name="taRequestNote"
+                                                                                rows="4" cols="37" runat="server"></TEXTAREA>
+==========================================================================
+ Dim _gv As GridView
+            _gv = CType(e.Row.Cells(0).FindControl("GridView2"), GridView)
+            _gv.DataSource = DirectCast(e.Row.DataItem, FMDUI.UserV3sSwitching.iFund_FAS_IF).inv
+            _gv.DataBind()
+            'DataBinder.Eval(e.Row.DataItem.
+=======================================================
+internet 
+@start "" /b "C:\Program Files\Internet Explorer\iexplore.exe" %*
+=======================
+    //stmnavr = addresses != null ? addresses.stmnavr : null,
+                                             //stmsnavr = addresses != null ? addresses.stmsnavr : null,
+                                             //stmpactsub = addresses != null ? addresses.stmpactsub : null,
+                                             //stmspactsub = addresses != null ? addresses.stmspactsub : null,
+                                             //stmpret = addresses != null ? addresses.stmpret : null,
+                                             //stmspret = addresses != null ? addresses.stmspret : null,
+                                             //stmtrddasub = addresses != null ? addresses.stmtrddasub : null,
+==================================================
+custom Event
+      AddHandler gvSwitching.PageIndexChanging, AddressOf gvSwitching_PageIndexChanging
+
+
+ Protected Sub gvSwitching_PageIndexChanging(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewPageEventArgs) Handles gvSwitching.PageIndexChanging
+        Dim _gvSwitching As GridView = DirectCast(sender, GridView)
+        _gvSwitching.PageIndex = e.NewPageIndex
+
+
+        _gvSwitching.EditIndex = -1
+        _gvSwitching.SelectedIndex = -1
+        BindSwitching()
+    End Sub
+=====================================================================
+     protected void GridView1_RowCreated(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.Header)
+            {
+                //custom header.
+                GridView gvHeader = (GridView)sender;
+                GridViewRow gvHeaderRow = new GridViewRow(0, 0, DataControlRowType.Header, DataControlRowState.Insert);
+
+
+
+
+
+
+                TableCell tc1 = new TableCell();
+                tc1 = new TableCell();
+
+
+                tc1.Text = "";
+                tc1.ColumnSpan = 1;
+                // tc1.BackColor = System.Drawing.Color.Brown;
+
+
+                gvHeaderRow.Cells.Add(tc1);
+
+
+                tc1 = new TableCell();
+                tc1.HorizontalAlign = HorizontalAlign.Center;
+
+
+
+
+                tc1.ColumnSpan = 1;
+                // tc1.BackColor = System.Drawing.Color.Brown;
+
+
+                gvHeaderRow.Cells.Add(tc1);
+
+
+
+
+                tc1 = new TableCell();
+                // First column 
+                tc1.HorizontalAlign = HorizontalAlign.Center;
+                tc1.BorderWidth = Unit.Pixel(1);
+                tc1.Text = "¨Ó¹Ç¹ÊÔ¹¤éÒã¹ÊµçÍ¡";
+                tc1.ColumnSpan = 2;
+                // tc1.BackColor = System.Drawing.Color.Brown;
+
+
+                gvHeaderRow.Cells.Add(tc1);
+
+
+                // Second  column 
+
+
+                tc1 = new TableCell();
+                tc1.Text = "";
+                tc1.ColumnSpan = 1;
+                gvHeaderRow.Cells.Add(tc1);
+
+
+
+
+                tc1 = new TableCell();
+                tc1.Text = "";
+                tc1.ColumnSpan = 1;
+                gvHeaderRow.Cells.Add(tc1);
+
+
+                gvHeader.Controls[0].Controls.AddAt(0, gvHeaderRow);
+
+
+            }
+        }
+
+
+====================================================================================
+ public  DataSet GetMemBers(string empcode)
+        {
+            string _empcode=empcode.Trim();
+            string sql = "SELECT * FROM FDEmp where  RTRIM(LTRIM(empcode))=@empcode";
+              
+            DataSet ds; 
+            List<SqlParameter> parms = new List<SqlParameter>();
+            parms.Add(new SqlParameter("@empcode", _empcode));
+
+
+           
+            ds=iFund_db.GetDataSet(sql, parms);
+
+
+            return ds;
+
+
+        }
+===================================================================================================================
+Link To DataSet
+public Stk_Products[] LikeProductCode(string PR_CODE)
+        {
+            StringBuilder OUTPUT = new StringBuilder();
+          
+           // sql = "SELECT  PR_CODE, PR_NAME, PR_DEC, PR_UNITPERBOX, PR_MINBOX, PR_UPDATE, PR_UPDATEBY FROM PRODUCTS where PR_CODE LIKE '" + PR_CODE + "%';";
+          sql = "SELECT * FROM PRODUCTS where PR_CODE LIKE '" + PR_CODE + "%';";
+
+
+            DataSet ds = db.GetDataSet(sql);
+            IEnumerable<Stk_Products> q = (from T in ds.Tables[0].AsEnumerable()
+                                           select new Stk_Products
+                                        {
+
+
+                                            PR_CODE = T.Field<string>("PR_CODE").ToString(),
+                                            PR_DEC = T.Field<string>("PR_DEC").ToString(),
+                                           // PR_MIN = T.Field<int>("PR_DEC"),
+                                            PR_NAME = T.Field<string>("PR_NAME").ToString(),
+                                            PR_UNITPERBOX = T.Field<int>("PR_UNITPERBOX"),
+                                           // PR_UPDATE = T.Field<DateTime>("PR_UPDATE"),
+                                            PR_UPDATEBY = T.Field<string>("PR_UPDATEBY").ToString(),
+
+
+
+
+                                            PR_GROUPS= T.Field<string>("PR_GROUPS").ToString(),
+                                            PR_BIGUNIT = T.Field<string>("PR_BIGUNIT").ToString(),
+                                            PR_CODE_NAME = T.Field<string>("PR_CODE_NAME").ToString(),
+                                            PR_UNIT = T.Field<string>("PR_UNIT").ToString(),
+
+
+                                        });
+            return q.ToArray<Stk_Products>(); 
+        }
+
+
+============================================================================
+Crytal Check Row
+ if RecordNumber = 1 then
+  crNoLine
+else
+crDottedLine
+========================================================================================
+»Ñ´àÈÉ
+round() ãªé»Ñ´àÈÉä»ËÒ¨Ó¹Ç¹àµçÁ·Õèã¡Åé·ÕèÊØ´
+floor() ãªé»Ñ´àÈÉ·Ôé§ (»Ñ´Å§)
+ceiling() »Ñ´¢Öé¹ 
+===========================================================================================
+convert DataItem
+    //GridViewRow row
+            //_PR_UNITPERBOX  = Convert.ToInt32(DataBinder.Eval(e.Row.DataItem,"PR_UNITPERBOX"));
+            string  _PR_UNITPERBOX=Convert.ToString(DataBinder.Eval(row.DataItem, "PR_CODE"));
+
+
+string.IsNullOrEmpty(Request["radius"]) ? (int?)null : int.Parse(Request["radius"]
+==========================================================================================================
+int null   
+ int? i=null;
+==========================================================================================================
+Linq Null Able  
+mfr_fBuy=temp.mfr_fBuy == null ? 0 : (Double)temp.mfr_fBuy,
+=======================================================================================================
+Refresf PAge
+   Response.Redirect(Request.Url.AbsoluteUri); 
+========================================================================================================
+Dis Able Text 
+   private static void DisableAllTextBoxes(Control parent)
+        {
+
+
+            foreach (Control c in parent.Controls)
+            {
+
+
+                var tb = c as TextBox;
+
+
+                if (tb != null)
+                {
+
+
+                    //tb.Enabled = false;
+                    tb.ReadOnly = true;
+                    tb.BackColor = System.Drawing.Color.FromName("#c6efce");
+                    tb.BorderWidth = 0;
+                    tb.ForeColor = System.Drawing.Color.Black;
+                }
+
+
+                DisableAllTextBoxes(c);
+
+
+            }
+
+
+
+
+
+
+        }
+===============================================================================================================
+insert Drop Down  
+ListItem lt = new ListItem("¡ÃØ³ÒàÅ×Í¡«Ñ¾¾ÅÒÂàÍÍÃì", "0");
+                drpSupply.Items.Insert(0, lt);
+==========================================================================
+
+
+get all item grid
+
+
+  string dropDownListValue;
+                    foreach (GridViewRow row in GridView1.Rows)
+                    {
+                          dropDownListValue = ((DropDownList)row.FindControl("drpproduct")).SelectedItem.Value;
+                        dd.Items.Remove(dd.Items.FindByValue(dropDownListValue));
+                    }
+
+
+ foreach (GridViewRow row in GridView1.Rows)
+    {
+        // Selects the text from the TextBox
+
+
+        // which is inside the GridView control
+
+
+        string textBoxText = _
+          ((TextBox)row.FindControl("TextBox1")).Text;
+        Response.Write(textBoxText);
+        // Selects the text from the DropDownList
+
+
+        // which is inside the GridView control
+
+
+        string dropDownListText = ((DropDownList)
+           row.FindControl("DropDownList1")).SelectedItem.Value;
+        Response.Write(dropDownListText);
+        // Selects items from the ListBox
+
+
+        // which is inside the GridView control
+
+
+        ListBox myListBox = (ListBox)row.FindControl("ListBox1");
+
+
+        foreach(ListItem selectedItem in myListBox.Items)
+        {
+            // Checks if the item in the ListBox is selected or not
+
+
+            if (selectedItem.Selected)
+            {
+                // Print the value of the item if its selected
+
+
+                Response.Write(selectedItem.Value);
+            }
+        }
+
+
+===============================================================================================
+Post Back Jquery Data
+function SAVE_COUNT_PRINT(vBAR_CODE)
+ {
+
+
+     var dataToSend = { BAR_CODE: vBAR_CODE, MethodName: 'PRINT_BARCODE', UserID: 'UserID' };
+          
+           var options = {
+               url: 'ServicePage.aspx?x=' + new Date().getTime(),
+               data: dataToSend,
+               dataType: 'JSON',
+               type: 'POST',
+               success: function (response) {
+                   window.location.href = '~/ServicePage.aspx' + ID;
+                   //after sucess will redirect to new page
+               }
+
+
+           }
+           $.ajax(options);
+}
+
+
+
+
+code Behide
+
+
+ protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!Page.IsPostBack)
+            {
+                #region Ajax methods
+                if (Request.Form["MethodName"] == "PRINT_BARCODE")
+                // same Method Name that we are specifying on client side(DeleteR)
+                {
+                    string BAR_CODE = "";
+                    BAR_CODE = Request.Form["BAR_CODE"];
+                    // DeleteRec();// Method defined on the page to delete the record
+                    PrintBarCode(BAR_CODE);
+                    return;
+                }
+
+
+
+
+                #endregion
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+        private void PrintBarCode(string BAR_CODE)
+        {
+            
+            Stk_Receivedetails Rev = new Stk_Receivedetails();
+            Rev.SAVE_COUNT_PRINT_BARCODE(BAR_CODE);
+        }
+
+
+
+
+==================================================================================================================   
+  if (Language == 0)
+            {
+
+
+                month.Items.Add(new ListItem("·Ø¡à´×Í¹", "0"));
+                month.Items.Add(new ListItem("Á¡ÃÒ¤Á", "1"));
+                month.Items.Add(new ListItem("¡ØÁÀÒ¾Ñ¹¸ì", "2"));
+                month.Items.Add(new ListItem("ÁÕ¹Ò¤Á", "3"));
+                month.Items.Add(new ListItem("àÁÉÒÂ¹", "4"));
+                month.Items.Add(new ListItem("¾ÄÉÀÒ¤Á", "5"));
+                month.Items.Add(new ListItem("ÁÔ¶Ø¹ÒÂ¹", "6"));
+                month.Items.Add(new ListItem("¡Ã¡®Ò¤Á", "7"));
+                month.Items.Add(new ListItem("ÊÔ§ËÒ¤Á", "8"));
+                month.Items.Add(new ListItem("¡Ñ¹ÂÒÂ¹", "9"));
+                month.Items.Add(new ListItem("µØÅÒ¤Á", "10"));
+                month.Items.Add(new ListItem("¾ÄÈ¨Ô¡ÒÂ¹", "11"));
+                month.Items.Add(new ListItem("¸Ñ¹ÇÒ¤Á", "12"));
+            }
+            else
+            {
+
+
+                month.Items.Add(new ListItem("All Months", "0"));
+                month.Items.Add(new ListItem("January", "1"));
+                month.Items.Add(new ListItem("February", "2"));
+                month.Items.Add(new ListItem("March", "3"));
+                month.Items.Add(new ListItem("April", "4"));
+                month.Items.Add(new ListItem("May", "5"));
+                month.Items.Add(new ListItem("June", "6"));
+                month.Items.Add(new ListItem("July", "7"));
+                month.Items.Add(new ListItem("August", "8"));
+                month.Items.Add(new ListItem("September", "9"));
+                month.Items.Add(new ListItem("October", "10"));
+                month.Items.Add(new ListItem("November", "11"));
+                month.Items.Add(new ListItem("December", "12"));
+
+
+            }
+============================================================================================================
+client post back 
+$('#<%= this.btnRefreshCustomers.ClientID %>').click();
+============================================================================================================
+print
+function CallPrint(strid) 
+{ 
+ var prtContent = document.getElementById(strid); 
+ var WinPrint = 
+window.open('','','letf=0,top=0,width=1,height=1,toolbar=0,scrollbars=0,sta?tus=0'); 
+ WinPrint.document.write(prtContent.innerHTML); 
+ WinPrint.document.close(); 
+ WinPrint.focus(); 
+ WinPrint.print(); 
+ WinPrint.close(); 
+ //prtContent.innerHTML=strOldOne; 
+
+
+} 
+===========
+insert dropdown
+ ListItem lt = new ListItem("¡ÃØ³ÒàÅ×Í¡ÊÔ¹¤éÒ", "0");
+                    dd.Items.Insert(0, lt);
+============================================
+Enable Web Service POST
+<webServices>
+     <protocols>
+       <add name="HttpPost" />
+       <add name="HttpGet" />
+     </protocols>
+</webServices>
+
+
+====================================================================================
+add fied grid
+BoundField nameColumn = new BoundField();
+nameColumn.DataField = "Name";
+
+
+nameColumn.HeaderText = "Person Name"; 
+
+
+GridView1.Columns.Add(nameColumn);
+-----------------------------------------------------------------------
+TemplateField ckhColumn = new TemplateField();
+
+
+ckhColumn.HeaderTemplate = new GridViewTemplate(ListItemType.Header, "CheckBox Column");
+
+
+ckhColumn.ItemTemplate = new GridViewTemplate(ListItemType.Item, "some data");
+
+
+GridView1.Columns.Add(ckhColumn);
+
+
+==========================================================================================
+
+
+ 
+Sort Thai Data Set
+ DataTable dt = dsTemp.Tables[0];
+        dt.Locale = new System.Globalization.CultureInfo("th-TH");
+        DataView view = new DataView(dt);
+        view.Sort = "ThaiProvince ASC";
+        DataTable tableUnique = view.ToTable(true, "ThaiProvince");
+=========================================================================================
+Color 
+System.Drawing.Color.FromName("#ffc7ce");
+===============================================================================
+Unique Table Set
+DataTable dt = dsTemp.Tables[0];
+            DataView view = new DataView(dt);
+            view.Sort="englishprovince ASC";
+            DataTable tableUnique = view.ToTable(true, "englishprovince");
+================================================================================
+High Color rows
+  e.Row.Cells[2].BackColor = System.Drawing.Color.FromName("#c6efce"); 
+================================================================================
+  e.Row.Cells[2].BackColor = System.Drawing.Color.FromName("#c6efce"); 
+
+
+  if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                // determine the value of the UnitsInStock field
+                DateTime OR_DATE = Convert.ToDateTime(DataBinder.Eval(e.Row.DataItem, "OR_DATE"));
+                if (OR_DATE  <=  DateTime.Now)
+                    // color the background of the row yellow
+                    e.Row.BackColor = Color.Yellow;
+            }
+=============================================================
+string Null or Empyt
+String.IsNullOrEmpty(dr["UN_ID"].ToString()
+================================================
+Add Stkye in Rows   
+trLocation.Style.Add("display", "block");
+==============================================
+Null Empty Check
+String.IsNullOrEmpty(dr["UN_ID"].ToString())
+====================================================================================
+delete data row
+dtNew.Rows[1].Delete();
+=======================================
+Auto Number 
+private DataTable AutoNumberedTable(DataTable SourceTable)
+
+
+{
+
+
+DataTable ResultTable = new DataTable();
+
+
+DataColumn AutoNumberColumn = new DataColumn();
+
+
+AutoNumberColumn.ColumnName="S.No.";
+
+
+AutoNumberColumn.DataType = typeof(int);
+
+
+AutoNumberColumn.AutoIncrement = true;
+
+
+AutoNumberColumn.AutoIncrementSeed = 1;
+
+
+AutoNumberColumn.AutoIncrementStep = 1;
+
+
+ResultTable.Columns.Add(AutoNumberColumn);
+
+
+ResultTable.Merge(SourceTable);
+
+
+return ResultTable;
+
+
+}
+
+
+
+
+
+
+using (SqlCommand Command= Connection.CreateCommand())
+
+
+{
+
+
+Command.CommandText = "SELECT * FROM [myTable]";
+
+
+SqlDataAdapter dataAdapter=new SqlDataAdapter(Command);
+
+
+DataTable dataTable = new DataTable();
+
+
+dataAdapter.Fill(dataTable);
+
+
+this.dataGridView1.DataSource = AutoNumberedTable(dataTable);
+
+
+}
+
+
+
+
+
+
+================================================================================
+Get Data RowDataBound
+DataBinder.Eval(e.Row.DataItem, "ColumnName")
+==============================================================================
+Delete Gridview Encode ' = &#39;
+ OnClientClick='<%# String.Format("javascript:return confirm(&#39;¤Ø³µéÍ§¡ÒÃÅº «Ñ¾¾ÅÒÂàÍÍÃì {0}&#39;);",Eval("SP_COMPANYNAME")) %>'
+==========================
+Allow Jquery Call webservice
+[System.Web.Script.Services.ScriptService]
+=====================================================================
+===========
+Data Base Parameter
+string strValue = "Some Untrusted Value";
+ List<SqlParameter> parms = new List<SqlParameter>(); 
+parms.Add(new SqlParameter("Value", strValue));  
+string sql = "SELECT * FROM TableName WHERE FieldName=@Value"; DataTable tblResults = DatabaseAccess.ExecSQL(sql, parms); 
+================================================================
+áÊ´§ ·È¹ÔÂÁ   áººäÁè»Ñ´àÈÉ 2 µÓáË¹è§
+    //BaD Function
+        string StrAmount = "";
+        StrAmount = _amount.ToString("#,0.00#########################");
+        //Fin Point
+        StrAmount = StrAmount.Substring(0, StrAmount.IndexOf(".") + 3);
+        //StrAmount = StrAmount.Remove(StrAmount.Length - 1);
+======================================================
+validate   ËÒÍÑ¡¢ÃÐ·ÕèÍÂÙè  (--) µéÍ§µÔ´¡Ñ¹
+function ereg(strOriginalString)
+ 
+    dim objRegExp : set objRegExp = new RegExp
+    with objRegExp
+        .Pattern = "[/\;,:*?“<>|%&()+=]|(--)"
+        .IgnoreCase = false
+        .Global = True
+    end with
+    ereg = objRegExp.test(strOriginalString)
+     
+end function
+=======================================================
+enclode url
+   Protected Function SanitizeURLString(ByVal RawURLParameter As String) As String
+
+
+        Dim Results As String
+
+
+        Results = RawURLParameter
+
+
+        Results = Results.Replace("<", "%3C")
+        Results = Results.Replace(">", "%3E")
+        Results = Results.Replace("#", "%23")
+        Results = Results.Replace("%", "%25")
+        Results = Results.Replace("{", "%7B")
+        Results = Results.Replace("}", "%7D")
+        Results = Results.Replace("|", "%7C")
+        Results = Results.Replace("\", "%5C")
+        Results = Results.Replace("^", "%5E")
+        Results = Results.Replace("~", "%7E")
+        Results = Results.Replace("[", "%5B")
+        Results = Results.Replace("]", "%5D")
+        Results = Results.Replace("`", "%60")
+        Results = Results.Replace(";", "%3B")
+        Results = Results.Replace("/", "%2F")
+        Results = Results.Replace("?", "%3F")
+        Results = Results.Replace(":", "%3A")
+        Results = Results.Replace("@", "%40")
+        Results = Results.Replace("=", "%3D")
+        Results = Results.Replace("&", "%26")
+        Results = Results.Replace("&", "%26")
+        Results = Results.Replace("'", "%27")
+        Results = Results.Replace("$", "%24")
+
+
+        Return Results
+
+
+    End Function
+======================================================================
+dbnull container.dataitem
+
+
+Protected Function FundManager(ByVal PolicyCode As Object, ByVal policyName As Object) As String
+
+
+        If (PolicyCode Is DBNull.Value) Or (policyName Is DBNull.Value) Then
+            Return ""
+        End If
+
+
+================================================================================
+SQL
+
+
+SELECT     *
+FROM         FDReportName
+orDER BY
+CASE rptcode
+WHEN 'KC11' THEN 1 
+WHEN 'KC12' THEN 2 
+WHEN 'KC21' THEN 3
+WHEN 'KC22' THEN 4 
+WHEN 'KC23' THEN 5
+WHEN 'KC24' THEN 6 
+WHEN 'KC25' THEN 7
+WHEN 'KC26' THEN 8 
+END   
+================================================================================
+ÂéÒÂµÓáË¹è§ Dropdown list?
+                 int indexOfBangkok = DrpProvince.Items.IndexOf(DrpProvince.Items.FindByText("Bangkok"));
+
+
+                 indexOfBangkok = indexOfBangkok + 1;
+
+
+                 DrpProvince.Items.Insert(0, DrpProvince.Items.FindByText("Bangkok"));
+
+
+                 DrpProvince.Items.RemoveAt(indexOfBangkok);
+
+
+===================================================================
+¡ÒÃ sort ¢éÍÁÙÅã¹ data Table 
+DataTable dt = dsTemp.Tables[0];
+            dt.Locale = new System.Globalization.CultureInfo("th-TH");
+            DataView view = new DataView(dt);
+            //äÁè¶¹Ñ´ÒÃ¡à¢ÕÂ¹ Caml
+            view.Sort = "ThaiBranchName ASC";
+            view.RowFilter = "ThaiBranchName IS Not NULL";
+            DataTable tableUnique = view.ToTable(true, "ThaiBranchName");
+
+
+=======================================================================
+Redirect ã¹Ë¹éÒ»Ñ¨¨ØºÑ¹
+  this.Context.Response.Redirect(this.Context.Request.Url.AbsoluteUri);
+=================================================================
+ËÒµÓáË¹è§ ã¹ Drop Down  By Text
+int indexOfBangkok = DrpProvince.Items.IndexOf(DrpProvince.Items.FindByText("Bangkok"));
+DrpProvince.Items.Insert(0, DrpProvince.Items.FindByText("Bangkok"));
+DrpProvince.Items.RemoveAt(indexOfBangkok);
+
+
+=======================================================================
+DataFormatString
+
+
+bc = new BoundColumn();
+bc.DataField = LoadResource("mf_cateEng");
+bc.DataFormatString = "<span class='tablecopy'>{0}</span>";
+bc.HeaderText = LoadResource("GridHeaderText1");
+====================================================================
+ChartArea1.AxisX.LabelAutoFitStyle ^= LabelAutoFitStyles.DecreaseFont;
+ChartArea1.AxisX.LabelAutoFitStyle ^= LabelAutoFitStyles.IncreaseFont;
+ChartArea1.AxisX.LabelAutoFitStyle |= LabelAutoFitStyles.LabelsAngleStep30;
+ChartArea1.AxisX.LabelAutoFitStyle |= LabelAutoFitStyles.LabelsAngleStep45;
+ChartArea1.AxisX.LabelAutoFitStyle |= LabelAutoFitStyles.LabelsAngleStep90;
+ChartArea1.AxisX.LabelAutoFitStyle |= LabelAutoFitStyles.StaggeredLabels;
+============================================================
+br ·Ø¡ ie
+LiteralControl br = new LiteralControl("<br/>"); 
+==============================================================
+Color
+ ColorTranslator.FromHtml("#010099");
+==========================================
+Drop domw lost
+
+
+                     parentWebPart.Layout = (EnumLayout)Enum.Parse(typeof(EnumLayout), drpLayout.SelectedValue.ToString()); 
+
+
+
+
+========================================
+Page Hitory Code Behide
+ txtName.Text=Request.ServerVariables["HTTP_REFERER"].ToString();
+=====================================================================
+Enum Parse
+
+
+  parentWebPart.Effects = (EnumEffects)Enum.Parse(typeof(EnumEffects), drp.SelectedValue, true); 
+=============================================================
+Path
+~/
+
+
+=============================================================
+Http Request WebService
+   private void Request()
+    {
+        byte[] data = System.Text.Encoding.ASCII.GetBytes("Head_Title=string&Head_Link=string&Head_Description=string&Head_Image=string&Image_Link=string&Language=th-TH&FileName=string.xml&Item_link=string");
+
+
+        System.Net.WebRequest request = System.Net.HttpWebRequest.Create("http://localhost/bblwebservice/Service1.asmx/CreateRssMaketSum");
+        request.Method = "POST";
+        request.ContentLength = data.Length;
+        request.ContentType = "application/x-www-form-urlencoded";
+
+
+        System.IO.Stream str = request.GetRequestStream();
+        str.Write(data, 0, data.Length);
+        str.Flush();
+        request.GetResponse();
+        //====================== In Case Want to Return result.
+        //System.Net.WebResponse response = request.GetResponse();
+        //System.IO.StreamReader reader = new System.IO.StreamReader(response.GetResponseStream());
+        //string result = reader.ReadToEnd();
+        //TextBox2.Text = result; // the result here is xml format, you need to handle this
+    }
+=====================================================================
+DateFomat     
+using System.Globalization;
+DateTimeFormatInfo myDTFI = new CultureInfo("en-US", false).DateTimeFormat;
+==============================================================
+Select Top New In Data View
+        public static DataView SelectTopFrom(DataTable dataTable, int rowCount)
+        {
+
+
+            DataTable dt = dataTable;
+
+
+            DataTable dtn = dt.Clone();
+
+
+            if (dataTable.Rows.Count < rowCount)
+            {
+                rowCount = dataTable.Rows.Count;
+            }
+
+
+            for (int i = 0; i < rowCount; i++)
+            {
+
+
+                dtn.ImportRow(dt.Rows[i]);
+
+
+            }
+
+
+            DataView dvn = new DataView(dtn);
+
+
+            return dvn;
+
+
+        }
+================================================================
+enum
+      drpLanguage.DataSource = Enum.GetNames(typeof(EnumLanguage));
+            drpLanguage.DataBind();
+==============================================================
+function (params string[] optionalParamArray)
+=============================================================
+Config
+ string PathFeed = ConfigurationSettings.AppSettings["PathFeed"];
+
+
+====================================================================================
+String Culture
+     string results = string.Format(CultureInfo.CurrentCulture, "{0}, {1}, {2:C} ",
+      //                                     db.GetParameterValue(dbCommand, "ProductID"),
+      //                                     db.GetParameterValue(dbCommand, "ProductName"),
+      //                                     db.GetParameterValue(dbCommand, "UnitPrice"));
+===========================================================================
+dataview v=dt.defaultview;
+v.sort="columnName DESC";
+dt=v.toTable(); 
+=========================================================================
+Select Top in data views
+  
+      public static DataTable SelectTopFrom(DataTable dt, int rowCount)
+ 
+      {
+ 
+      DataTable dtn = dt.Clone();
+ 
+      for (int i = 0; i < rowCount; i++)
+ 
+      {
+ 
+      dtn.ImportRow(dt.Rows[i]);
+ 
+      }
+ 
+      return dtn;
+ 
+      }
+ 
+      public static DataView SelectTopFrom(DataView dv, int rowCount)
+ 
+      {
+ 
+      DataTable dt = CreateTable(dv);
+ 
+      DataTable dtn = dt.Clone();
+ 
+      for (int i = 0; i < rowCount; i++)
+ 
+      {
+ 
+      dtn.ImportRow(dt.Rows[i]);
+ 
+      }
+ 
+      DataView dvn = new DataView(dtn);
+ 
+      return dvn;
+ 
+      }
+==============================================================
+check null
+(!dr.IsDBNull(dr.GetOrdinal("lvc_memo")))
+=============================
+session
+HttpContext context = HttpContext.Current;
+===============================================================================
+string format
+    double v = 17688.65849;
+    double v2 = 0.15;
+    int x = 21;
+
+
+    string str = String.Format("{0:F2}", v);  
+    Console.WriteLine(str);  
+
+
+    str = String.Format("{0:N5}", v);  
+    Console.WriteLine(str);  
+  
+    str = String.Format("{0:e}", v);  
+    Console.WriteLine(str);  
+  
+    str = String.Format("{0:r}", v);  
+    Console.WriteLine(str);  
+  
+    str = String.Format("{0:p}", v2);  
+    Console.WriteLine(str);  
+  
+    str = String.Format("{0:X}", x);  
+    Console.WriteLine(str);  
+
+
+    str = String.Format("{0:D12}", x);
+    Console.WriteLine(str);  
+
+
+    str = String.Format("{0:C}", 189.99);
+    Console.WriteLine(str);
+  }
+}
+
+
+         
+ 
+17688.66
+17,688.65849
+1.768866e+004
+17688.65849
+15.00 %
+15
+000000000021
+$189.99
+ 
+
+
+========================================================================
+SqlConnection myConnection = new SqlConnection("Data Source=localhost;Initial Catalog=Northwind;Integrated Security=SSPI;");
+myConnection.Open();
+
+
+  SqlTransaction myTrans = myConnection.BeginTransaction();  //New a transaction
+SqlCommand myCommand = new SqlCommand();
+myCommand.Transaction = myTrans;
+
+
+try
+{
+  myCommand.CommandText = "Update Address set location='23 rain street' where userid='0001'";
+  myCommand.ExecuteNonQuery();
+  myTrans.Commit();
+  Console.WriteLine("Record is udated.");
+}
+catch(Exception e)
+{
+  myTrans.Rollback();
+  Console.WriteLine(e.ToString());
+  Console.WriteLine("Sorry, Record can not be updated.");
+}
+finally
+{
+  myConnection.Close();
+}
+
+
+===================================================================
+Clear Windows Log in
+<SCRIPT>document.execCommand("ClearAuthenticationCache");</SCRIPT>
+==============
+if ( !((Common.IsCSSR(EnumRole.iCus_Approver)) || (Common.IsCSSR(EnumRole.iCus_Maker))))
+                        {
+                        Response.Redirect("Accessdenied.aspx");
+                        }
+===========================
+HACK 
+’, ‘’); drop table MyTable;--
+Response.Write(WindowsIdentity.GetCurrent().Name + "<br>");
+===============================================
+<location path="Approval.aspx" >
+                        <system.web>
+                        <authorization>
+                        <allow roles="FMDDOM\iCus_Approver,FMDDOM\iCus_Maker" />
+                        <deny users="*" />
+            </authorization>
+                        </system.web>
+        </location>
+=========================================================
+Char[] splitter = new Char[] {'\\'};
+                        temp=strDomainName.Split(splitter,2);
+=====================================================
+        public icussupport.iCusSupportService.StateType Mode
+                {
+                        get
+                        {
+                                return _Mode;
+                        }
+                        set
+                        {
+                                _Mode = value;
+                        }
+                }
+=====================================]==========
+Call Function from Main PAge (user conrtol)
+         (DetailRegister1 as icussupport.modules.Register.DetailRegister).RefreshControlToWebPage();
+
+
+==================================================
+if (this.Page is ApprovalDetail)
+                        {
+                                _Mode = (this.Page as ApprovalDetail).Mode ;
+                        }
+                        else if (this.Page is UserSecurity )
+                        {
+                        _Mode = (this.Page as  UserSecurity ).Mode ;
+                        
+                        }
+
+
+
+
+
+
+page.aspx.cs
+
+
+public class MyPage : Page
+
+
+{
+
+
+    private int _portalId;
+
+
+    public int PortalId
+
+
+    {
+
+
+        get { return this._portalId; }
+
+
+
+
+    } 
+
+
+ 
+
+
+    protected void Page_Load(object sender, EventArgs e)
+
+
+    {
+
+
+        this._portalId = 1;
+
+
+
+
+    } 
+
+
+} 
+
+
+ 
+
+
+usercontrol.ascx.cs
+
+
+public class MyUserControl : UserControl
+
+
+{
+
+
+    protected void Page_Load(object sender, EventArgs e)
+
+
+    {
+
+
+        int portalId = (this.Page as MyPage).PortalId;
+
+
+
+
+    } 
+
+
+} 
+
+
+
+
+==========================================================
+Enum
+SpAudit.SptranType= Convert.ToString((int)Enum.Parse(typeof(iCusSecureUser.TransactionType), TranType.ToString())); 
+==================================================
+Usercontrol 
+  Dim Menu As Control
+        If (HttpContext.Current.User.IsInRole("101")) Then
+            Menu = LoadControl("modules/MenuLlnk/101.ascx")
+==========================================================
+this.Response.Write("[" + this.Request.Form["drpOnshore"].ToString());
+===========================================================
+if inline
+<%if(DataBinder.Eval(Container.DataItem,"WPID")>0){%>
+
+
+Requested Before.
+
+
+<%}else{%>
+
+
+<INPUT id=chkImage type=checkbox value='<%# DataBinder.Eval(Container.DataItem,"WPID") %>' name=chkImage>&nbsp;Request Image
+
+
+<%}%>
+
+
+=======================================================
+select * from dbo.iCusUpdAuthorize
+where requestID=@requestID and  SUBSTRING(acCode, LEN(acCode), 1) =@type;
+=====================================
+                         <%# (DataBinder.Eval(Container.DataItem,"Status").ToString() == "S" ? "Success" :"Fail")%>
+============================================================
+sql Date
+SELECT     StartingDate,
+           EndingDate,
+           DATEDIFF(MONTH, StartingDate, EndingDate) AS [Month DatePart],
+           DATEDIFF(YEAR, StartingDate, EndingDate) AS [Year DatePart]
+FROM       @Dates
+ORDER BY   StartingDate
+===============================================================
+
+
+where DATEDIFF(MONTH, Datetime, getdate())  <=6
+===================================================================================
+Get valus usercontrols
+if (this.Page is ApprovalDetail)
+                        {
+                                _Mode = (this.Page as ApprovalDetail).Mode ;
+                        }
+                        else if (this.Page is UserSecurity )
+                        {
+                        _Mode = (this.Page as  UserSecurity ).Mode ;
+                        
+                        }
+
+
+
+
+
+
+page.aspx.cs
+
+
+public class MyPage : Page
+
+
+{
+
+
+    private int _portalId;
+
+
+    public int PortalId
+
+
+    {
+
+
+        get { return this._portalId; }
+
+
+
+
+    } 
+
+
+ 
+
+
+    protected void Page_Load(object sender, EventArgs e)
+
+
+    {
+
+
+        this._portalId = 1;
+
+
+
+
+    } 
+
+
+} 
+
+
+ 
+
+
+usercontrol.ascx.cs
+
+
+public class MyUserControl : UserControl
+
+
+{
+
+
+    protected void Page_Load(object sender, EventArgs e)
+
+
+    {
+
+
+        int portalId = (this.Page as MyPage).PortalId;
+
+
+
+
+    } 
+
+
+} 
+
+
+====================================================================================
+validate string javascript
+        function TrimString(sInString) {
+    sInString = sInString.replace( /^\s+/g, "" );// strip leading
+    return sInString.replace( /\s+$/g, "" );// strip trailing
+        }
+==================================================================================
+show dialog
+<input id="Button1" type="button" value="button" onclick="ShowDialog();" />
+<input id="Text1" type="text" />
+
+
+
+
+return
+ <input id="Button1" type="button" value="button" onclick="javascript:window.returnValue='TEST';window.close();"  />
+=================================================================================
+java scripts 
+ClientScript.RegisterStartupScript(this.GetType(), "Error", "<script language = javascript>alert('" + message + "')</script>");
+==================================================================================
+à¾ÔèÁ Style ã¹  asp:Content
+ HtmlLink validation = new HtmlLink();
+        validation.Href = "~/ExternalControls/Validate/styles/validation.css";
+        validation.Attributes.Add("type", "text/css");
+        validation.Attributes.Add("rel", "stylesheet");
+        this.Header.Controls.Add(validation);
+==================================================================================
+Disable button on process
+btn.Attributes["onclick"]=string.Format("{0}.disabled=true;{1};",btn.UniqueID,GetPostBackEventReference(btn));
+==================================================================================
+========================================================================
+Windown media Player wmp
+        function PlayMvp(ex)
+        {debugger;
+        var urllink=ex.name;
+ 
+WMP=new Object();
+WMP=document.getElementById('Testoo');
+ //document.getElementById("MMPW009876YUOP").innerHTML=ControlWmp;
+ WMP.url=urllink;
+WMP.controls.Play();
+        }
+
+
+
+
+
+
+        <OBJECT id="Testoo" title="rrrrrr" style="WIDTH: 192px; HEIGHT: 248px" classid="clsid:6BF52A52-394A-11D3-B153-00C04F79FAA6"
+                                                                VIEWASTEXT>
+                                                                <PARAM NAME="URL" VALUE=>
+                                                                <PARAM NAME="rate" VALUE="1">
+                                                                <PARAM NAME="balance" VALUE="0">
+                                                                <PARAM NAME="currentPosition" VALUE="0">
+                                                                <PARAM NAME="defaultFrame" VALUE="">
+                                                                <PARAM NAME="playCount" VALUE="1">
+                                                                <PARAM NAME="autoStart" VALUE="-1">
+                                                                <PARAM NAME="currentMarker" VALUE="0">
+                                                                <PARAM NAME="invokeURLs" VALUE="-1">
+                                                                <PARAM NAME="baseURL" VALUE="">
+                                                                <PARAM NAME="volume" VALUE="50">
+                                                                <PARAM NAME="mute" VALUE="0">
+                                                                <PARAM NAME="uiMode" VALUE="full">
+                                                                <PARAM NAME="stretchToFit" VALUE="0">
+                                                                <PARAM NAME="windowlessVideo" VALUE="0">
+                                                                <PARAM NAME="enabled" VALUE="-1">
+                                                                <PARAM NAME="enableContextMenu" VALUE="-1">
+                                                                <PARAM NAME="fullScreen" VALUE="0">
+                                                                <PARAM NAME="SAMIStyle" VALUE="">
+                                                                <PARAM NAME="SAMILang" VALUE="">
+                                                                <PARAM NAME="SAMIFilename" VALUE="">
+                                                                <PARAM NAME="captioningID" VALUE="">
+                                                                <PARAM NAME="enableErrorDialogs" VALUE="0">
+                                                                <PARAM NAME="_cx" VALUE="5080">
+                                                                <PARAM NAME="_cy" VALUE="6562">
+                                                        </OBJECT>
+===============================================================
+LISTLINK IS HASHTABLE
+IDictionaryEnumerator en = ListLinkMedia.GetEnumerator();
+                         
+//                                if (en.MoveNext())
+======================================================
+Link Button
+public void showLabel(string[] labelI)
+{
+LinkButton[] linkbutton = new LinkButton[labelI.Length];
+
+
+for (int i=0; i<labelI.Length; i++)
+{
+linkbutton[i] = new LinkButton();
+linkbutton[i].Text = labelI[i];
+linkbutton[i].Click += new System.EventHandle(LinkButton_Click);
+PutLabelHere.Controls.Add(linkbutton[i]);
+
+
+}
+}
+
+
+
+
+public void LinkButton_Click(object sender, System.EventArgs e){
+litArray.Text="You clicked the link button";
+}
+
+
+==============================================================================
+ Assembly.Load
+Assembly SampleAssembly =Assembly.Load("DataAccessLayer,Culture=neutral,version=1.0.0.0, PublicKeyToken=6270b14f99be164f");
+                        foreach (Type oType in SampleAssembly.GetTypes()) 
+                        {
+                                Console.WriteLine(oType.Name);
+                        }
+
+
+   IDbCustomers cd = 
+//            (IDbCustomers)= 
+            Assembly.Load(AssemblyName).
+            CreateInstance(mytype); 
+==============================================================================
+Enum 
+áºº string
+DataProvider MyEnumVal;
+MyEnumVal = (DataProvider)Enum.Parse(typeof(DataProvider), "SqlServer");
+
+
+int
+MyEnum MyEnumVal;
+  int i;
+  // Retrieve an enum member by its value
+  i = 2;
+  MyEnumVal = (MyEnum)i;
+======================================================================
+CheckBoxList     (select All)
+
+
+for (int i=0; i<CheckBoxList1.Items.Count; i++)
+
+
+{
+
+
+if(CheckBoxList1.Items[i].Value =="True")
+
+
+CheckBoxList1.Items[i].Selected=true;
+
+
+}
+
+
+}
+
+
+ ==============================================================
+ÊÃéÒ§ CheckBoxList    
+CheckBoxList chkList1 = new CheckBoxList();
+    chkList1.ID = "SomeList";
+    // populate the check box list
+    for(int i = 0; i < nElements; i++)
+    {
+        ListItem listItem = new ListItem();
+        listItem.Value = sNameValue[0];
+        listItem.Text = sNameValue[1];
+
+
+        chkList1.Items.Add(listItem);
+    }
+
+
+    // Do some other stuff and add the check box list to the page
+    someTableObject.Controls.Add(chkList1);
+
+
+
+
+// àÅ×Í¡
+ Private void btnSubmit_Click(...)
+    {
+        CheckBoxList chkList1 = (CheckBoxList)this.FindControl("SomeList");
+        for(int i = 0; i < chkBoxList1.Items.Count; i++)
+        {
+            if(chkBoxList1.Items[i].Selected == true)
+            {
+                // Do something with the value
+                blah = chkList1.Items[i].Value;
+            }
+        }
+    }
+
+
+
+
+
+
+===================================================
+Indexers In C# (¤×Í property áººÃÑº¤èÒ)
+
+
+using System;
+using System.Collections;
+class MyClass
+{
+ private string []data = new string[5];
+ public string this [int index]
+ {
+  get
+  {
+   return data[index];
+  }
+  set
+  {
+   data[index] = value;
+  }
+ }
+}
+class MyClient
+{
+ public static void Main()
+ {
+  MyClass mc = new MyClass();
+  mc[0] = "Rajesh";
+  mc[1] = "A3-126";
+  mc[2] = "Snehadara";
+  mc[3] = "Irla";
+  mc[4] = "Mumbai";
+ Console.WriteLine("{0},{1},{2},{3},{4}",mc[0],mc[1],mc[2],mc[3],mc[4]);
+ }
+}
+============================================================================
+·Ó cutom control + javascript
+using System;
+using System.Web;
+using System.Web.UI;
+
+
+namespace Spotu
+{
+  public class HelloWorld : Control
+  {
+    protected override void OnInit(EventArgs e)
+    {
+      string strCode = @"
+        <script>
+          function HelloWorld(id)
+          {
+            document.all(id).innerText = 'Hello World';
+          }
+        </script>";
+
+
+      Page.RegisterClientScriptBlock("Spotu_HelloWorld",
+                                      strCode);
+    }
+
+
+    protected override void Render(HtmlTextWriter writer)
+    {
+      writer.Write("<button onclick='javascript:HelloWorld(\""
+                    + this.UniqueID + "\")'>"
+                    + "Click Me</button>");
+
+
+      writer.Write("<div id='" + this.UniqueID
+                    + "'></div>");
+    }
+  }
+
+
+======================================================================
+<system.web>
+   
+    <customErrors mode="RemoteOnly"/>
+    <compilation debug="true"/>
+    <authentication mode="Forms">
+      <forms loginUrl="login.aspx" protection="Validation" timeout="300"/>     >>>>>>>>>ÇèÒ¨Ð Login Ë¹éÒäË¹
+    </authentication>
+    <authorization>
+      <deny users="?"/>
+      <allow users="*"/>
+    </authorization>
+    <globalization requestEncoding="utf-8" responseEncoding="utf-8"/>
+    <roleManager enabled="true"/>
+    <siteMap defaultProvider="XmlSiteMapProvider" enabled="true">
+      <providers>
+        <add name="XmlSiteMapProvider" description="SiteMap provider which reads in .sitemap XML files." type="System.Web.XmlSiteMapProvider, System.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" siteMapFile="web.sitemap" securityTrimmingEnabled="true"/>
+      </providers>
+    </siteMap>
+  </system.web>
+=========================================
+¢éÒÁ Page ËÃ×Íà»ÅèÒ IsCrossPagePostBack
+=======================================
+PreviousPage 
+
+
+Page 1
+ public string _name;
+    public string Name
+    {
+        get { return _name; }
+        set { _name = value; }
+
+
+    }
+
+
+
+
+PAge2
+<%@ PreviousPageType VirtualPath="~/Default.aspx"  %>
+  if (PreviousPage != null)
+        { 
+  //    messageKLabel.Text= ((_Default)PreviousPage.);
+            messageKLabel.Text =  PreviousPage.Name ; 
+        }
+==================================================================================
+¶éÒ 
+¶éÒ¼ÅàËÁ×Í¹¡Ñ¹ÁÑ¹¨Ðà»ç¹ false
+f^b
+
+
+==================================================================================
+
+
+Resize Array
+
+
+public static System.Array ResizeArray (System.Array oldArray, int newSize) {
+   int oldSize = oldArray.Length;
+   System.Type elementType = oldArray.GetType().GetElementType();
+   System.Array newArray = System.Array.CreateInstance(elementType,newSize);
+   int preserveLength = System.Math.Min(oldSize,newSize);
+   if (preserveLength > 0)
+      System.Array.Copy (oldArray,newArray,preserveLength);
+   return newArray; }
+
+
+
+
+- 
+
+
+
+
+// Test routine for ResizeArray().
+public static void Main () {
+   int[] a = {1,2,3};
+   a = (int[])ResizeArray(a,5);
+   a[3] = 4;
+   a[4] = 5;
+   for (int i=0; i<a.Length; i++)
+      System.Console.WriteLine (a[i]); }
+
+
+===========================================================================
+Java script  in CODe BEHIND
+
+
+
+
+<asp:Button ID="Button1" OnClientClick='somethingsay("FFFFFFF")'
+           runat="server" Text="Button" OnClick="Button1_Click" />
+
+
+
+
+ const string _scripts = @"<script language='javascript'>
+   function somethingsay(thing)
+{
+alert(thing);
+}
+</script>
+";
+
+
+    const string _scripts2 = @"<script language='javascript'>
+somethingsay('HELLOE');</script>";
+
+
+    const string _Confrim = @" 
+return confirm('RRRRRRFRFFf');";
+=========================================================================
+virtual
+protected virtual void xxxxx() = Protected Overridable Sub xxxxx() 
+==========================================================================
+Debug
+Assembly.GetExecutingAssembly().Location;
+==========================================================================
+PAGE LIFECYCLE
+
+
+PREInit
+InitComplete
+PreLoad
+LoadComplete
+PreRenderComplete
+SaveStateComplete
+==================================================================================
+ÊÒÁÒÃ¶ãËé¤èÒà»ç¹ Null ä´é
+Nullable<bool> tfr= null;
+bool? dfdgd = null;
+==================================================================================
+Gen 
+
+
+
+
+-à¾×èÍ¹à¾ÔèÁ¤ÇÒÁàÃçÇ¢Í§¡ÒÃ Run à¾ÃÒÐäÁèµéÍ§ÊÃéÒ§ Boxing
+-Å´»Ñ­ËÒ
+public class Gen<T, U>
+{
+    public T t;
+    public U u;
+
+
+    public Gen(T _t, U _u)
+    {
+        t = _t;
+        u = _u;
+
+
+    }
+}
+
+
+Gen<string, string> ga = new Gen<string, string>("Hello", "World");
+==================================================================================
+region
+
+
+#region IDisposable Members
+#endregion
+================================================================================== 
+Get set
+
+
+ public String Value
+    {
+        get { return _Value; }
+        set {
+            _Value = value;
+          
+        }
+    }
+==================================================================================
+OVERIDR STRING
+  
+public override string ToString()
+    {
+        return Firstname + "  " + LastName + "   " + Sex   + "  " + "  " + age;
+    }
+==================================================================================

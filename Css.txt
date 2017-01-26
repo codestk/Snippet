@@ -1,0 +1,61 @@
+﻿A Hover
+
+
+a           { color: #0f83a2; text-decoration: none;font-weight: bold;}
+a:hover     { color: #efd903;}
+a{-webkit-transition: color .6s linear;}
+a:hover{-webkit-transition: color .1s linear;}
+
+
+=====================================================================
+
+
+Best text box  Font Color
+
+
+Quora: #333 on #fff
+
+
+facebook: #141823 on #fff
+
+
+twitter: #292f33 on #fff
+
+
+linkedin: #333 on #fff
+
+
+New York Times: #333 on #fff
+
+
+
+
+Black Demo #3e3e3e
+
+
+=====================================================================
+
+
+คือต้องมีทั้งสามอันติด
+.animation-element.slide-right.in-view {
+}
+=====================================================================
+panel head Screen Shot 2560-01-22 at 7.28.45 PM.png  Screen Shot 2560-01-22 at 7.29.40 PM.png 
+.panel-heading.panel-section-bg-patterns {
+*    background-image: -webkit-linear-gradient(left, #de6262, #ffb88c);
+*    background-image: linear-gradient(to right, #de6262, #ffb88c);
+}
+
+
+.panel .panel-heading.panel-section-bg-screenshots {
+*    background-image: -webkit-linear-gradient(left, #1cd8d2, #93edc7);
+*    background-image: linear-gradient(to right, #1cd8d2, #93edc7);
+}
+
+
+
+
+.panel-heading.panel-section-bg-blog {
+*    background-image: -webkit-linear-gradient(left, #4776e6, #78d1ee);
+*    background-image: linear-gradient(to right, #4776e6, #78d1ee);
+}

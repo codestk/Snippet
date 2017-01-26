@@ -1,0 +1,1065 @@
+﻿location.replace(“http://www.wrox.com/”);
+
+
+location.reload(); //reload - possibly from cache
+location.reload(true); //reload - go back to the server
+===================================================================
+//Better – checks if sort is a function
+function isSortable(object){
+return typeof object.sort == “function”;
+}
+
+
+============================================================
+"where contains(*,'\"you GHO\"') and "
+
+
+    var employees = [
+    { "firstName": "John", "lastName": "Doe" },
+    { "firstName": "Anna", "lastName": "Smith" },
+    { "firstName": "Peter", "lastName": "Jones" }
+        ];
+
+
+        var msg = { d: employees }      
+        alert(msg.d);
+=====================================================================
+(Infinity>100)
+=> true
+
+
+//also worth noting
+Infinity - 1 == Infinity
+=> true
+
+
+Math.pow(2,1024) === Infinity
+=> true
+===============================================================
+    $('#txtBarCode').bind("cut copy paste", function (e) {
+                $('#signup').show();
+            });
+=====================================================================================
+var Lang = 'EN';
+var xmlUrl = '../../en.xml';
+/// <reference path="../../en.xml" />
+var MsgText;
+
+
+CallXml(xmlUrl, function (myRtn) {
+    MsgText = myRtn;
+});
+
+
+//Base Function
+function GetFideXml(fied) {
+    var output = '';
+    $(MsgText).find("Caption").each(function () {
+        output = $(this).find(fied).text();
+
+
+    });
+    return output;
+}
+
+
+=================================================================================================================================================
+//Useage
+  printCanvas('BarCode_canvas');
+
+
+        function printCanvas(el) {
+            var dataUrl = document.getElementById(el).toDataURL(); //attempt to save base64 string to server using this var  
+            var windowContent = '<!DOCTYPE html>';
+            windowContent += '<html>';
+            windowContent += '<head><title>Print canvas</title></head>';
+            windowContent += '<body>';
+            windowContent += '<img src="' + dataUrl + '">';
+            windowContent += '</body>';
+            windowContent += '</html>';
+            var printWin = window.open('', '', 'width=100,height=77');
+            printWin.document.open();
+            printWin.document.write(windowContent);
+            printWin.document.close();
+            printWin.focus();
+            printWin.print();
+            //printWin.close();
+        }
+==================================================================================
+print
+  $('#CustomerPrint').click(function() {
+                var divToPrint = document.getElementById('Print');
+                var newWin = window.open('', 'Print-Window', 'width=400,height=400,top=100,left=100');
+                newWin.document.open();
+                newWin.document.write('<html><head>  <link href="Css/StyleSheet1.css" rel="stylesheet"><link href="Css/NonBaseStlyte.css" rel="stylesheet">  <link href="Css/CustomCss/OrdersCss.css" rel="stylesheet" /></head><body  onload="window.print()"    >' + divToPrint.innerHTML + '</body></html>');
+                //newWin.document.write('<html><head>  <link href="Css/StyleSheet1.css" rel="stylesheet"></head><body   onload="window.print()">' + divToPrint.innerHTML + '</body></html>');
+                newWin.document.close();
+                //setTimeout(function () { newWin.close(); }, 10);
+            });
+======================================================================
+index of drop down
+     if ($("#drpCustomer").get(0).selectedIndex == 0) {
+                        alert('blah blah');
+                    }
+=======================================================================
+Loop Object
+for(var k in validation_messages) {
+    var o = validation_messages[k];
+    do_something_with(o.your_name);
+    do_something_else_with(o.your_msg);
+}
+----------------
+    >> No effect with linQ
+     oderiTems.forEach(function (arrayItem) {
+             
+                    var item = "<div id='OrdereID_" + arrayItem.ItemCode + "' class='DivRow DivBorderDotTop UpdateOrder' rel='leanModal' href='#DivPopupOrer' ><div><label><img id='delete_" + arrayItem.AutoId + "' src=images/delete.png  style=vertical-align:middle; padding-right:3px; Class='RemoveOrder' />" + arrayItem.AutoId + "</label></div><div><label>" + arrayItem.ItemDetails + "</label></div><div><label>" + arrayItem.ItemQualitys + "</label></div><div><label>" + arrayItem.ItemPerCosts + "</label></div><div><label>" + arrayItem.ItemTotalCode + "</label></div></div>";
+
+
+                    $("#RowOrder").append(item);
+            });
+
+
+==========================================================================
+Stop  Boblue Evnet
+ e.stopPropagation();
+
+
+============================================================================
+print  
+ var divToPrint = document.getElementById('customerForm');
+                    var newWin = window.open('', 'Print-Window', 'width=400,height=400,top=100,left=100');
+                    newWin.document.open();
+                    newWin.document.write('<html><head><style>#in {display:none}</style><body   onload="window.print()">' + divToPrint.innerHTML + '</body></html>');
+                    newWin.document.close();
+                    setTimeout(function () { newWin.close(); }, 10);
+=====================================================================
+//Usage
+// id =customerForm
+// class = .InputForm
+//LockInput("customerForm input[type=text],input[type=password],input[type=checkbox],select", true);
+function LockInput(control,flage) {
+    // $("#x").attr('disabled', 'disabled');
+
+
+     
+    $(control).each(function () {
+        if (($(this)[0].type == "text") || ($(this)[0].type == "password") || ($(this)[0].type == "checkbox")||$(this)[0].type == "select-one")  {
+
+
+            // $(this).val('');
+            if (flage==true)
+            {
+                $(this).attr('disabled', 'disabled');
+            }
+            else
+            {
+                $(this).removeAttr('disabled');
+            }
+        }
+       
+
+
+        
+
+
+    });
+========================================================================
+date picker
+  $("#datepicker").datepicker({ dateFormat: 'dd/mm/yy' });
+            $('#datepicker').datepicker().datepicker('setDate', new Date());
+
+
+
+
+            $("#datepicker").datepicker("option", "maxDate", new Date());//Set MAx date
+
+
+==========================================================
+delay silde show
+$('#Div_Product_Detail div').delay(100).animate({ 'margin-left': '0' });
+
+
+======================================================================
+set object   
+ var BarCodeUpc =  { sym: "upca", desc: "UPC-A", text: "488581014973", opts: "includetext" };
+========================================================================
+set drop dwon
+     SetMethodSave("Get_UNIT_WEIGHT");
+            CallServices(MethodSave, "{}", false, function(myRtn) { //MethodSave form Evnet Clcik Add
+
+
+                $('#ctl00_MainContent_LsBox_UNIT_WEIGHT').get(0).options.length = 0;
+                $('#ctl00_MainContent_LsBox_UNIT_WEIGHT').get(0).options[0] = new Option('Please Select', '0');
+                $.each(myRtn.d, function(index, item) {
+                    $('#ctl00_MainContent_LsBox_UNIT_WEIGHT').get(0).options[$('#ctl00_MainContent_LsBox_UNIT_WEIGHT').get(0).options.length] = new Option(this.UNIT_WEIGHT_UNIT);
+                }); //
+            }); //   CallServices(MethodSave, data, false, function (myRtn) {
+========================================================================
+manual drop down
+             $('#ctl00_MainContent_LsBox_UNIT_WEIGHT')
+  .empty().append('<option  value="whatever">äÁèÊÒÁÒÃ¶á¡éä¢ä´é</option>')
+  .append('<option selected="selected" value=' + msg.d.UNIT_WEIGHT_UNIT + '>' + msg.d.UNIT_WEIGHT_UNIT + '</option>');
+
+
+                    $('#ctl00_MainContent_LsBox_UNIT_ITEMS')
+      .empty().append('<option  value="whatever">äÁèÊÒÁÒÃ¶á¡éä¢ä´é</option>')
+      .append('<option selected="selected" value='+msg.d.UNIT_ITEMS_UNIT +'>' + msg.d.UNIT_ITEMS_UNIT + '</option>')
+                    ;
+                
+========================================================================
+set drop
+
+
+   // sets selected index of a select box to the option with the value "0"
+            $("select#elem").val('0');
+
+
+            // sets selected index of a select box to the option with the value ""
+            $("select#elem").val('');
+
+
+            // sets selected index to first item using the DOM
+            $("ctl00_MainContent_LsBox_UNIT_TASTE")[0].selectedIndex = 0;
+=====================================================================
+option 
+var conceptName = $('#aioConceptName :selected').text();
+==========================================================
+/*AutoClose-------------------------------------------------------------------------------------------------------
+* Help
+* Close Map when alter click
+* $("body").click(function (event) {
+*     if (event.target.nodeName == "IMG") {
+*         return;
+*     }
+*     if ($(event.target).isOf('#divMenuCat')) {
+*         return;
+*     }
+*     HideMenuCat();
+* }
+* );
+**/
+==========================================================
+clear text box
+        function ClearValidateError() {
+             
+            $(".InputForm input[type=text],input[type=password],input[type=checkbox]").each(function () {
+
+
+             
+                if (($(this)[0].type == "text") ||($(this)[0].type == "password")) {
+                    $(this).removeClass('ValidateError');
+                    $(this).val('');
+                }
+                else if ($(this)[0].type == "checkbox") {
+                   this.checked = false;
+                }
+
+
+
+
+            });
+        }
+======================================================================
+user jqery in each
+
+
+  $(".InputForm input[type=text]").each(function () {
+                $(this).removeClass('ValidateError');
+
+
+============================================
+string to byte 
+    var str = "Hello World!";
+            var PICTURE = str.getBytes();  
+    String.prototype.getBytes = function () {
+            var bytes = [];
+            for (var i = 0; i < this.length; ++i) {
+                bytes.push(this.charCodeAt(i));
+            }
+            return bytes;
+        };
+=======================================================================
+Check Box Loop     
+   $(':checkbox[name=EditGroupPRofile]').each(function () {
+
+
+                            this.checked = false;
+                            for (var _role in myRtn.d.ROLES)
+                            {
+                                  
+                            if (this.value == myRtn.d.ROLES[_role].GROUP_ID) {
+                                this.checked = true;
+                            }  
+                            }//loop role array
+                            
+                        });//End Loop Check Box
+=======================================================================
+check box
+            var EM_FLAG = "A";
+            var isChecked = $('#chkEM_FLAG:checked').val() ? true : false;
+
+
+            if (isChecked == false) {
+                EM_FLAG = "I";//InActive
+            }
+=======================================================================
+each loop object jquery  
+$(':checkbox[name=UserinList]').each(function () {
+                    if (this.checked) {
+                        DeleteRow();//Loop delete
+                    }
+=====================================================================
+check all
+$('#foo').bind('click', function());
+    function checkAll() {
+          
+                $(':checkbox[name=UserinList]').prop('checked', this.checked);
+ 
+        }
+
+
+=====================================================================
+    $('#progressbar').width('99%');
+    <div id="progressbox"><div id="progressbar"></div ><div id="statustxt">0%</div ></div>
+<div id="output"></div>
+
+
+
+
+
+
+#Wrapper {
+    width: 70%;
+    margin: 50px auto 0px;
+    background: #EEEEEE;
+    padding: 20px;
+    border: 1px solid #E6E6E6;
+}
+#progressbox {
+    border: 1px solid #0099CC;
+    padding: 1px;
+    position:relative;
+    width:400px;
+    border-radius: 3px;
+    margin: 10px;
+    display:block;
+    text-align:left;
+}
+#progressbar {
+    height:20px;
+    border-radius: 3px;
+    background-color: #003333;
+    width:1%;
+}
+#statustxt {
+    top:3px;
+    left:50%;
+    position:absolute;
+    display:inline-block;
+    color: #000000;
+}
+
+
+=====================================================
+Stop Tr delega event
+            $(".imgdelete").click(function (e) {
+             
+                alert('R You Okkk;');
+                e.stopPropagation();
+            });//$("TrCl
+========================================================================
+Error And Sign off
+/// <reference path="../Error.aspx" />
+var pagesigout = 'SignOff.aspx';
+var ErrorPage = 'Error.aspx';
+ 
+
+
+
+
+//Log Error For Jqery
+    $(document).ajaxError(function (event, request, settings) {
+        debugger
+        if (request.status == 401) {
+            //window.location = 'SignOff.aspx';
+            window.location = pagesigout;
+
+
+        }
+        else {
+
+
+               window.location = ErrorPage;
+                var data;
+                var Url = 'Error.aspx/ThrowException';
+                data = "{ErrorMessage:'" + request.responseText + "'}";
+                CallServices(Url, data, function (myRtn) {
+                });
+       
+        }
+
+
+    });
+
+
+
+
+ 
+======================================================================
+Sigout
+     $(document).ajaxError(function (event, request, settings) {
+                debugger
+                if (request.status == 401) {
+                    window.location = 'SignOff.aspx';
+                }
+            });
+
+
+===================================================================
+mutilple bind event
+  $("#DivTableData").tabs("destroy");
+========================================================
+Send item on close
+      $(window).unload(function (e) {
+             
+                 jQuery.ajax({ url: "http://localhost:1632/SignOff.aspx", async: false });
+                //$.ajax({
+                //    type: "POST",
+                //    contentType: "application/json",
+                //    data: "",
+                //    url: "SignOff.aspx",
+                //    dataType: "json",
+                //    success: function (data) {
+                //        alert(data.d);
+                //    },
+                //    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                //        debugger;
+                //    }
+                //});
+            });
+
+
+=================================================================================================
+ event.preventDefault();  »éÍ§¡Ñ¹ http:
+<a href="http://www.sanook.com"> HHH TEST </a>
+ $("a").click(function (event) {
+        debugger
+        event.preventDefault();
+
+
+        // This code will be executed
+        $("<b>Prevent Default</b>").appendTo("body");
+    });
+==================================================================================
+Regular number only
+ MatchCollection matches = Regex.Matches(text, @"\d+");
+=======================================================================
+change border 
+  $("#divBarCat").css("border-style", "solid solid none solid");
+=========================================================
+toggle   
+ $("#imgDisplayCat").toggle(function () {
+        
+    }, function () {
+        
+    });
+=======================================================================
+console.log(&ldquo;Captain&rsquo;s Log&rdquo;);
+/===========================================================================================
+/** 
+* Performs the Decrease Key operation 
+* @param index Index of the node in the RefArray whose key is to be decreased 
+* @param amount Amount by which key is to be reduced 
+*/ 
+
+
+=========================================================================
+// <copyright file="AuthenticationType.cs" company="SharpSTS">
+// Copyright (c) 2007, 2008 All Right Reserved, http://sharpsts.com/
+//
+// This source is subject to the Microsoft Permissive License.
+// Please see the License.txt file for more information.
+// All other rights reserved.
+//
+// THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY 
+// KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
+// PARTICULAR PURPOSE.
+//
+// </copyright>
+// <author>Barry Dorrans</author>
+// <email>barryd@idunno.org</email>
+// <date>2008-06-10</date>
+// <summary>Contains a base, abstract class for an AuthorisationPolicyProvider</summary
+==============================================================================
+infinite
+      for(; ; ) {
+                     
+                    }
+==============================================================================
+  for(var oPraanem in window) {
+                        document.writeln(oPraanem); document.writeln('<br>');
+                    }
+
+
+==============================================================================================
+display function
+  function ff() {
+                        alert(arguments.length);
+                    }
+                    alert(ff.toString());
+===============================================================================================
+sub function    
+  var C = 1;
+                    alert(C);
+                    function f1(A, B) {
+                        function f2() {
+                            return A + B + C;
+                        }
+                        return f2();
+                    }
+
+
+                    alert(f1(1, 2));
+================================================================================================
+Drop Down
+ Clear Drop Down
+ $('#drpDataName').get(0).options.length = 0;
+        $('#drpDataName').get(0).options[0] = new Option('Please Select', '0');
+        $.each(msg.d, function(index, item) {
+        $('#drpDataName').get(0).options[$('#drpDataName').get(0).options.length] = new Option(item.DATANAME);
+=================================================================================================
+ //Select Data in Drop
+     $("#ddlFunds option:selected").text();
+
+
+
+
+       var vdrpITem = $("#drpITem").val();
+=================================================================================================
+Date Value
+$('#dateFrom').datepicker({ dateFormat: 'dd-mm-yy' }).val()+' To '+  $('#dateTo').datepicker().val();
+
+
+
+
+==================================================================================================
+Csv  msg.d   
+ function DownloadJSON2CSV(objArray) {
+        var array = typeof objArray != 'object' ? JSON.parse(objArray) : objArray;
+
+
+        var str = '';
+
+
+        for(var i = 0; i < array.length; i++) {
+            var line = '';
+
+
+            for(var index in array[i]) {
+                if(index != "__type") {
+                    line += array[i][index] + ',';
+                }
+            }
+
+
+            // Here is an example where you would wrap the values in double quotes
+            // for (var index in array[i]) {
+            //    line += '"' + array[i][index] + '",';
+            // }
+
+
+            line.slice(0, line.Length - 1);
+
+
+            str += trim(line, ',') + '\r\n';
+        }
+
+
+
+
+        //Fix ie
+        
+    if (navigator.appName != 'Microsoft Internet Explorer')
+    {
+        window.open('data:text/csv;charset=utf-8,' + escape(str));
+    }
+    else
+    {
+        var popup = window.open('','csv','');
+        popup.document.body.innerHTML = '<pre>' + str + '</pre>';
+    }
+        window.open("data:text/csv;charset=utf-8," + escape(str))
+    }
+========================================================================================================
+json check
+    if(msg != undefined) {
+                         if(msg.d.length == 0)
+========================================================================================================
+Tool tip validate
+   var  pos1 = $("#drpITem").offset();
+            var width1 = $("#drpITem").width();
+            var left1 = pos1.left + width1;
+            var top1 = pos1.top-2;//200;
+            $("#divPleaseSelect").css({
+                position: 'absolute',
+                zIndex: 5000,
+                left: left1,
+                top: top1
+            }).show(MainEffect);
+===========================================================================================================
+=======================================================================
+Dilplay All properties  
+for(var oPraanem in window) {
+                        document.writeln(oPraanem); document.writeln('<br>');
+}
+====================================================================
+select by Type
+#(':button')
+=========================================
+Mutiple Event
+$("#Div1 ,#Div2").clcik(function(){
+//Code Here
+});
+=============================================================
+Opacity
+$("#CatMenu li").removeClass("catselected").stop().animate({ opacity: 0.3 });;
+$(this).addClass("catselected").stop().animate({ opacity: 1 });
+======================================================================
+   @media screen{
+   #DivTableData .scrollBar
+   {
+       overflow-y: scroll; scrollbar-arrow-color:blue; scrollbar-face-color: #e7e7e7; scrollbar-3dlight-color: #a0a0a0; scrollbar-darkshadow-color:#888888"; 
+       }
+   }
+ 
+====================================================================
+var new_arr = []; == Array
+var lookup = {}; == object
+==================================================================
+msg
+ { Msg = { d: Tempmsg.d.filter(isFXBooth) }; }
+=====================================================================
+    var data = [],
+//                        time = (new Date()).getTime(),
+//                        i;
+    
+                    for (i = -19; i <= 0; i++) {
+                        data.push({
+                            x: time + i * 1000,
+                           y: Math.random()
+                        });
+                   }
+
+
+=====================================================================
+var Msg;
+Msg = {
+    d: new_arr
+};
+==================================================================
+
+
+Get Value Check Box
+    var _cat = '';
+        $('#divMenuCat input[type=checkbox]').each(function () {
+          
+            if (this.checked) {
+                var _item;
+                _item = $(this).val();
+      
+                    _cat += _item + ',';
+            }
+        });
+
+
+
+
+        CatFilter = "CatFilter:" + trim(_cat, ',');
+====================================================================
+propertier of arry
+  lookup[arr[i][prop]]
+====================================================================
+rotate
+transform: rotate(30deg);
+-ms-transform: rotate(30deg); /* IE 9 */
+-webkit-transform: rotate(30deg); /* Safari and Chrome */
+-o-transform: rotate(30deg); /* Opera */
+-moz-transform: rotate(30deg); /* Firefox */
+======================================================================
+Add meta tag 
+$('title').text("Your new title tag here");
+ $('meta[name=description]').attr('content', 'new Meta Description here');
+======================================================================
+split 
+ var keypara = getQuerystring('q');
+        var _keypara = keypara.split('_');
+        var _cat = _keypara[0];
+        var _subcat = _keypara[1];
+=============================================================
+µÑÇÍÂèÒ§·Õè 1 á·¹·Õè fish µÑÇáÃ¡ ´éÇÂ fox â´Â¤Ó¹Ö§µÑÇÍÑ¡ÉÃàÅç¡-ãË­è ¼ÅÅÑ¾¸ì¨Ðä´éà»ç¹ fox is a fish
+
+
+1
+2
+3
+4
+<script type=“text/javascript”>
+var strMessage = “fish is a fish” ;
+alert( strMessage.replace( /fish/ , “fox” ) ) ;
+</script>
+µÑÇÍÂèÒ§·Õè 2 á·¹·Õè fish ·Ñé§ 2 µÑÇ ´éÇÂ fox â´Â¤Ó¹Ö§µÑÇÍÑ¡ÉÃàÅç¡-ãË­è ¼ÅÅÑ¾¸ì¨Ðä´éà»ç¹ fox is a fox
+
+
+1
+2
+3
+4
+<script type=“text/javascript”>
+var strMessage = “fish is a fish” ;
+alert( strMessage.replace( /fish/g , “fox” ) ) ;
+</script>
+µÑÇÍÂèÒ§·Õè 3 á·¹·Õè FISH µÑÇáÃ¡ ´éÇÂ fox â´ÂäÁè¤Ó¹Ö§µÑÇàÅç¡-ãË­è ¼ÅÅÑ¾¸ì¨Ðä´éà»ç¹ fox is a FISH
+
+
+1
+2
+3
+4
+<script type=“text/javascript”>
+var strMessage = “FISH is a FISH” ;
+alert( strMessage.replace( /fish/i , “fox” ) ) ;
+</script>
+µÑÇÍÂèÒ§·Õè 4 á·¹·Õè FISH ·Ñé§ 2 µÑÇ ´éÇÂ fox â´ÂäÁè¤Ó¹Ö§µÑÇàÅç¡-ãË­è ¼ÅÅÑ¾¸ì¨Ðä´éà»ç¹ fox is a fox
+
+
+1
+2
+3
+4
+<script type=“text/javascript”>
+var strMessage = “FISH is a FISH” ;
+alert( strMessage.replace( /fish/ig , “fox” ) ) ;
+</script>
+====================================================================
+
+
+Check if the checkbox is checked
+There are several ways to get to work out if a checkbox is checked or not with jQuery, and here a couple of alternatives. Each will return true if it's checked or false if it's not.
+
+
+1 $('input[name=foo]').is(':checked')
+2 $('input[name=foo]').attr('checked')
+
+
+
+
+1 $('input[name=foo]').attr('checked', true);
+and like so to uncheck the box:
+
+
+1 $('input[name=foo]').attr('checked', false);
+Working example
+====================================================================
+check box   
+var _cat = '';
+        $('#divMenuCat input[type=checkbox]').each(function () {
+          
+            if (this.checked) {
+                console.log($(this).val());
+                _cat += $(this).val()+',';
+            }
+        });
+        CatFilter = "CatFilter:" + _cat;
+====================================================================
+ // Disable #x
+ $("#x").attr('disabled', 'disabled');
+ // Enable #x
+ $("#x").removeAttr('disabled');
+============================================================
+msg
+     alert(msg.responseText);
+  , error: function (jqXHR, textStatus, errorThrown,msg)
+  , error: function (msg)
+=============================================================
+check show
+  if ($("#DivFilter_color_Show").css('display') == 'none')
+        { }
+        else
+        { }
+===================================================================
+function say()
+function dog(a,b)
+say.length = 0 
+dog.length =2
+=====================================
+function factorial(num){
+if (num < = 1) {
+return 1;
+} else {
+return num * arguments.callee(num-1)
+}
+}
+==============================================================================================
+Sort object
+function createComparisonFunction(propertyName) {
+return function(object1, object2){
+var value1 = object1[propertyName];
+var value2 = object2[propertyName];
+if (value1 < value2){
+return -1;
+} else if (value1 > value2){
+return 1;
+} else {
+return 0;
+}
+};
+}
+var data = [{name: "Zachary", age: 28}, {name: "Nicholas", age: 29}];
+data.sort(createComparisonFunction("name"));
+alert(data[0].name); //Nicholas
+data.sort(createComparisonFunction("age"));
+alert(data[0].name); //Zachary
+=============================================================================================
+num ber reg
+ 
+ var text = "000-00-0000";
+        var pattern = /\d{3}\-\d{2}-\d{4}/;
+        if (pattern.test(text)){
+        alert("The pattern was matched.");
+        }
+==============================================================================================
+var expression = / pattern / flags ;   << // flags g i m
+/*
+* Match all instances of “at” in a string.
+*/
+var pattern1 = /at/g;
+/*
+* Match the first instance of “bat” or “cat”, regardless of case.
+*/
+var pattern2 = /[bc]at/i;
+/*
+* Match all three-character combinations ending with “at”, regardless of case.
+*/
+var pattern3 = /.at/gi;
+
+
+/*
+* Match the first instance of “bat” or “cat”, regardless of case.
+*/
+var pattern1 = /[bc]at/i;
+/*
+* Match the first instance of “[bc]at”, regardless of case.
+*/
+var pattern2 = /\[bc\]at/i;
+/*
+* Match all three-character combinations ending with “at”, regardless of case.
+*/
+var pattern3 = /.at/gi;
+/*
+* Match all instances of “.at”, regardless of case.
+*/
+var pattern4 = /\.at/gi;
+
+
+===============================================================================================
+RegExp
+var expression = / pattern / flags ;
+var pattern2 = new RegExp(“[bc]at”, “i”);
+g — Indicates global mode, meaning the pattern will be applied to all of the string instead of
+stopping after the first match is found
+i — Indicates case - insensitive mode, meaning the case of the pattern and the string are ignored
+when determining matches
+m — Indicates multiline mode, meaning the pattern will continue looking for matches after
+reaching the end of one line of text
+============================================================================================
+onsole.log(&ldquo;Captain&rsquo;s Log&rdquo;);
+/===========================================================================================
+/** 
+* Performs the Decrease Key operation 
+* @param index Index of the node in the RefArray whose key is to be decreased 
+* @param amount Amount by which key is to be reduced 
+*/ 
+
+
+=========================================================================
+// <copyright file="AuthenticationType.cs" company="SharpSTS">
+// Copyright (c) 2007, 2008 All Right Reserved, http://sharpsts.com/
+//
+// This source is subject to the Microsoft Permissive License.
+// Please see the License.txt file for more information.
+// All other rights reserved.
+//
+// THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY 
+// KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
+// PARTICULAR PURPOSE.
+//
+// </copyright>
+// <author>Barry Dorrans</author>
+// <email>barryd@idunno.org</email>
+// <date>2008-06-10</date>
+// <summary>Contains a base, abstract class for an AuthorisationPolicyProvider</summary
+==============================================================================
+infinite
+      for(; ; ) {
+                     
+                    }
+==============================================================================
+  for(var oPraanem in window) {
+                        document.writeln(oPraanem); document.writeln('<br>');
+                    }
+
+
+==============================================================================================
+display function
+  function ff() {
+                        alert(arguments.length);
+                    }
+                    alert(ff.toString());
+===============================================================================================
+sub function    
+  var C = 1;
+                    alert(C);
+                    function f1(A, B) {
+                        function f2() {
+                            return A + B + C;
+                        }
+                        return f2();
+                    }
+
+
+                    alert(f1(1, 2));
+================================================================================================
+Drop Down
+ Clear Drop Down
+ $('#drpDataName').get(0).options.length = 0;
+        $('#drpDataName').get(0).options[0] = new Option('Please Select', '0');
+        $.each(msg.d, function(index, item) {
+        $('#drpDataName').get(0).options[$('#drpDataName').get(0).options.length] = new Option(item.DATANAME);
+=================================================================================================
+ //Select Data in Drop
+     $("#ddlFunds option:selected").text();
+
+
+
+
+       var vdrpITem = $("#drpITem").val();
+=================================================================================================
+Date Value
+$('#dateFrom').datepicker({ dateFormat: 'dd-mm-yy' }).val()+' To '+  $('#dateTo').datepicker().val();
+
+
+
+
+==================================================================================================
+Csv  msg.d   
+ function DownloadJSON2CSV(objArray) {
+        var array = typeof objArray != 'object' ? JSON.parse(objArray) : objArray;
+
+
+        var str = '';
+
+
+        for(var i = 0; i < array.length; i++) {
+            var line = '';
+
+
+            for(var index in array[i]) {
+                if(index != "__type") {
+                    line += array[i][index] + ',';
+                }
+            }
+
+
+            // Here is an example where you would wrap the values in double quotes
+            // for (var index in array[i]) {
+            //    line += '"' + array[i][index] + '",';
+            // }
+
+
+            line.slice(0, line.Length - 1);
+
+
+            str += trim(line, ',') + '\r\n';
+        }
+
+
+
+
+        //Fix ie
+        
+    if (navigator.appName != 'Microsoft Internet Explorer')
+    {
+        window.open('data:text/csv;charset=utf-8,' + escape(str));
+    }
+    else
+    {
+        var popup = window.open('','csv','');
+        popup.document.body.innerHTML = '<pre>' + str + '</pre>';
+    }
+        window.open("data:text/csv;charset=utf-8," + escape(str))
+    }
+========================================================================================================
+json check
+    if(msg != undefined) {
+                         if(msg.d.length == 0)
+
+
+========================================================================================================
+Tool tip validate
+   var  pos1 = $("#drpITem").offset();
+            var width1 = $("#drpITem").width();
+            var left1 = pos1.left + width1;
+            var top1 = pos1.top-2;//200;
+            $("#divPleaseSelect").css({
+                position: 'absolute',
+                zIndex: 5000,
+                left: left1,
+                top: top1
+            }).show(MainEffect);
+===========================================================================================================
+Auto Mate Arrya
+var colors = [“red”, “blue”, “green”]; //creates an array with three strings
+colors[colors.length] = “black”; //add a color (position 3)
+colors[colors.length] = “brown”; //add another color (position 4)
+============================================================================================================
+Date
+getTime() Returns the milliseconds representation of the date;
+same as valueOf() .
+setTime( milliseconds ) Sets the milliseconds representation of the date, thus
+changing the entire date.
+getFullYear() Returns the four - digit year (2007 instead of just 07).
+getUTCFullYear() Returns the four - digit year of the UTC date value.
+setFullYear( year ) Sets the year of the date. The year must be given with
+four digits (2007 instead of just 07).
+setUTCFullYear( year ) Sets the year of the UTC date. The year must be given
+with four digits (2007 instead of just 07).
+getMonth() Returns the month of the date, where 0 represents
+January and 11 represents December.
+getUTCMonth() Returns the month of the UTC date, where 0 represents
+January and 11 represents December.
+setMonth( month ) Sets the month of the date, which is any number 0 or
+greater. Numbers greater than 11 add years.
+setUTCMonth( month ) Sets the month of the UTC date, which is any number 0
+or greater. Numbers greater than 11 add years.
+getDate() Returns the day of the month (1 through 31) for the date.
+getUTCDate() Returns the day of the month (1 through 31) for the UTC
+date.
+setDate( date ) Sets the day of the month for the date. If the date is
+greater than the number of days in the month, the
+month value also gets increased
+===========================================================================================
+var objToday = new Date(),
+                weekday = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'),
+                dayOfWeek = weekday[objToday.getDay()],
+                domEnder = new Array( 'th', 'st', 'nd', 'rd', 'th', 'th', 'th', 'th', 'th', 'th' ),
+                dayOfMonth = today + (objToday.getDate() < 10) ? '0' + objToday.getDate() + domEnder[objToday.getDate()] : objToday.getDate() + domEnder[parseFloat(("" + objToday.getDate()).substr(("" + objToday.getDate()).length - 1))],
+                months = new Array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'),
+                curMonth = months[objToday.getMonth()],
+                curYear = objToday.getFullYear(),
+                curHour = objToday.getHours() > 12 ? objToday.getHours() - 12 : (objToday.getHours() < 10 ? "0" + objToday.getHours() : objToday.getHours()),
+                curMinute = objToday.getMinutes() < 10 ? "0" + objToday.getMinutes() : objToday.getMinutes(),
+                curSeconds = objToday.getSeconds() < 10 ? "0" + objToday.getSeconds() : objToday.getSeconds(),
+                curMeridiem = objToday.getHours() > 12 ? "PM" : "AM";
+var today = curHour + ":" + curMinute + "." + curSeconds + curMeridiem + " " + dayOfWeek + " " + dayOfMonth + " of " + curMonth + ", " + curYear;
