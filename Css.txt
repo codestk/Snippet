@@ -40,7 +40,7 @@ Black Demo #3e3e3e
 .animation-element.slide-right.in-view {
 }
 =====================================================================
-panel head Screen Shot 2560-01-22 at 7.28.45 PM.png  Screen Shot 2560-01-22 at 7.29.40 PM.png 
+panel head Screen Shot 2560-01-22 at 7.28.45 PM.png  Screen Shot 2560-01-22 at 7.29.40 PM.png
 .panel-heading.panel-section-bg-patterns {
 *    background-image: -webkit-linear-gradient(left, #de6262, #ffb88c);
 *    background-image: linear-gradient(to right, #de6262, #ffb88c);
@@ -59,3 +59,15 @@ panel head Screen Shot 2560-01-22 at 7.28.45 PM.png  Screen Shot 2560-01-22 at 7
 *    background-image: -webkit-linear-gradient(left, #4776e6, #78d1ee);
 *    background-image: linear-gradient(to right, #4776e6, #78d1ee);
 }
+==========================================================================
+background
+  <div class="item active deepskyblue section" style="background-image: url('img/home-bg.jpg');background-size: cover;background-position:center right;">
+    <div class="carousel-caption">
+      <h3 data-animation="animated bounceInLeft">This is the caption for slide 1</h3>
+      <h3 data-animation="animated bounceInRight">This is the caption for slide 1</h3>
+      <!-- <button class="btn btn-primary
+      btn-lg" data-animation="animated zoomInUp">Button</button> -->
+    </div>
+
+
+    ========================================================
