@@ -52,7 +52,7 @@ panel head Screen Shot 2560-01-22 at 7.28.45 PM.png  Screen Shot 2560-01-22 at 7
 *    background-image: linear-gradient(to right, #1cd8d2, #93edc7);
 }
 
-
+ 
 
 
 .panel-heading.panel-section-bg-blog {
