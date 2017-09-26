@@ -1,4 +1,11 @@
-﻿random string with parameter
+﻿
+
+ call "$(ProjectDir)MyFile.bat"
+
+
+copy D:\bangkokbank\SmartPlan\SmartPlanControl\bin\SmartPlanControl.dll  C:\Inetpub\wwwroot\sc82u2\Website\bin /y
+=============================================================================================
+random string with parameter
   string a = "1,2,3,4,5,6";
             string[] ab = a.Split(',');
           string b=  String.Concat(ab.OrderBy(c => c),",");

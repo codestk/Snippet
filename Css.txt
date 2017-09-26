@@ -1,4 +1,42 @@
-﻿A Hover
+﻿Hover
+
+.list-type2 a{
+position: relative;
+display: block;
+padding: .4em .4em .4em 2em;
+*padding: .4em;
+margin: .5em 0;
+background: #FC756F;
+color: #444;
+text-decoration: none;
+transition: all .2s ease-in-out;
+}
+
+.list-type2 a:hover{
+background: #d6d4d4;
+text-decoration:none;
+transform: scale(1.1);
+}
+=========================================================================
+ไม่เอาตัวสุดท้าย
+ #contact >div:not(:last-child)  
+        { margin-bottom:5px;}
+=======================================================================
+
+ผับขอบ
+     .fold:after {
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 0px;
+    height: 0px;
+    border-top: 69px solid #B5B5B5;
+    border-right: 69px solid transparent;
+}
+
+=================================
+A Hover
 
 
 a           { color: #0f83a2; text-decoration: none;font-weight: bold;}
