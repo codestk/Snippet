@@ -1,4 +1,20 @@
-﻿location.replace(“http://www.wrox.com/”);
+﻿
+refrsh image
+
+  $('#RefreshCap').click(function (e) {
+                
+                e.preventDefault();
+ 
+
+                $('#Image1').attr('src', "CaptchaImage.aspx?ver=" + Math.random());
+
+                //alert(CallTextCap());
+
+            });
+
+
+=========================================================================
+location.replace(“http://www.wrox.com/”);
 
 
 location.reload(); //reload - possibly from cache
