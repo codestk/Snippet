@@ -1,4 +1,64 @@
-﻿
+﻿return json
+
+        [HttpGet]
+        public ActionResult Max()
+        {
+            //CreditCard _CreditCard = new CreditCard { Address = "fdfd" };
+
+            return Json("your string or object", JsonRequestBehavior.AllowGet);
+        }
+==============================================================
+ string[] lines = { "First line", "Second line", "Third line" };
+            // WriteAllLines creates a file, writes a collection of strings to the file,
+            // and then closes the file.  You do NOT need to call Flush() or Close().
+            System.IO.File.WriteAllLines(@"C:\Temp\WriteLines.txt", lines);
+==============================================
+Json Return
+
+
+Mvc command
+[HttpGet]
+public PartialViewResult Step1()
+{
+   var model = new Step1();
+   model.Initialize(RenderingContext.Current.Rendering);
+   return PartialView("/Views/Renderings/AjaxDemo/Step1.cshtml", model);
+}
+
+[HttpPost]
+public ActionResult Step1(Step1 model)
+{
+   var result = new JsonResultModel
+   {
+      NextPage = "Step2"
+   };
+   if (model.FirstName != "jeff")
+   {
+      result.Errors.Add("FirstName", "First name must be jeff");
+   }
+   return Json(result);
+}
+==========================================================
+Json Return
+
+public object GetAnonymousType()
+{
+   return new { name = "Rick", company = "West Wind", entered= DateTime.Now };
+}
+
+======================================================================
+Return Json
+
+public ActionResult Index()
+
+{
+   return Json(data, JsonRequestBehavior.AllowGet)
+
+}
+=======================================================================
+
+===================================================================================
+Bat file
 
  call "$(ProjectDir)MyFile.bat"
 
