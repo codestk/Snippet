@@ -1,4 +1,42 @@
-﻿Hover
+﻿
+
+
+
+clear focus
+
+input:focus {
+    border:0 !important;
+outline:none !important;
+box-shadow:none !important;
+}
+
+
+===================================================================================
+Bootstap Column center
+
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+Now you can add it to any column size at any screen size and it will work seamlessly with Bootstrap's responsive layout:
+
+<div class="row">
+    <div class="col-lg-1 col-centered"></div>
+</div>
+
+กับ Button
+     <div class="row">
+                                        <div class="col-xs-12 col-sm -12 col-md-2  col-lg-2 col-centered">
+                                            <button class="btn btn-secondary btn-sm   btn-block   text-center" v-on:click="DownLoad">
+                                                {{model.Submit}}
+                                            </button>
+                                        </div>
+                                    </div>
+
+
+=============================================================================
+Hover
 
 .list-type2 a{
 position: relative;
