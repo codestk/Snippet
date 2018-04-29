@@ -1,0 +1,1 @@
+     @Html.TextBox("billing_point", ViewBag.billing_point as string, new { @class = "form-control", autocomplete = "off", required = string.Empty, data_fv_notempty_message = "*" })

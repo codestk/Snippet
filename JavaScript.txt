@@ -1,4 +1,96 @@
-﻿   
+﻿iframe complete แล้ว submit
+  function CreatePdf()
+    {
+
+        var SelectedCustomers = $('#SelectedCustomers').find(":selected").text();
+        var invoiceName = '';
+        $('#TableInvoice   input:checkbox:checked').not('#CheckAllInvoice').each(function () {
+
+            invoiceName = invoiceName + $(this).val()+ ',' ;
+        });
+  
+    
+
+        var $iFrame = $('iframe');
+    
+        $iFrame.load(function(){
+            $('#search').click();
+          
+        });
+    
+       
+        $iFrame.attr('src', "/Transport/ExportInvoice?invoiceName=" + invoiceName + " & SelectedCustomers=" + SelectedCustomers);
+ 
+        return false;
+    }
+===================================================================================================
+check box
+  $('#TableInvoice   input:checkbox').not(this).each(function () {
+            //$('#TableInvoice:checkbox.checkBox').each(function () {
+                if ($(this).prop('checked')) {
+                    selectedIDs.push($(this).val());
+                }
+            });
+
+=================================================================================================
+Autocomplete
+        $("input#billing_point").autocomplete({
+            minLength: 0,
+            source: function (request, response) {
+
+                var parameter = {
+                    customerId: $('#SelectedCustomers').find(":selected").text(),
+                    order_ids: $('#order_id').val()
+                };
+
+                //ไม่ต้องหาจุดวางบิล
+                if ((parameter.customerId == "--- select ---") || (parameter.order_ids == "")) {
+
+                    return;
+                }
+
+                $.ajax({
+                    url: "/Transport/GetBilling_point",
+                    dataType: "json",
+                    data: parameter,
+                    async: false,
+                    success: function (data, c) {
+                        console.log(data);
+                        response(data.billing_point);
+                        response($.map(data, function (item) {
+                            return {
+                                label: item.billing_point,
+                                value: item.billing_point
+                            };
+                        }));
+
+                        if (data.length > 0) {
+
+                            $("input#billing_point").val(data[0].billing_point);
+                        }
+
+                    }
+                });
+            }
+            ,
+            messages: {
+                noResults: '',
+                results: function () { }
+            }
+        }).focus(function () {
+            $(this).autocomplete("search", $(this).val());
+        });
+
+==================================================================================
+Json Data parameter
+
+            var data = {
+                customerId: $('#SelectedCustomers').find(":selected").text()
+
+            };
+
+data:  JSON.stringify(parameter)
+=================================================================================   
 Display Html
 
             htmlDecode: function (input) {
