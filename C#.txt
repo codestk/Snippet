@@ -1,4 +1,32 @@
-﻿Table To List
+﻿Entity retrun Json
+  public string Index2()
+        {
+            univercityEntities db = new univercityEntities();
+
+            var data = db.Departments.Where(x => (x.DepartmentID == 3) || (x.DepartmentID == 2));
+
+            return JsonConvert.SerializeObject(data, Formatting.Indented,
+     new JsonSerializerSettings()
+     {
+         ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+     }
+ );
+
+            // return JsonConvert.SerializeObject(data);
+            //return Json(new { Data = data }, JsonRequestBehavior.AllowGet);
+            //return Json(data, JsonRequestBehavior.AllowGet);
+
+            //univercityEntities db = new univercityEntities();
+
+            //return this.Json(
+            //       (from obj in db.Courses select new { Id = obj.CourseID, Name = obj.Credits })
+            //       , JsonRequestBehavior.AllowGet
+            //       );
+        }
+
+
+==========================================================================================================================
+Table To List
 
    List<Dictionary<string, object>> list = new List<Dictionary<string, object>>();
 
