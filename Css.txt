@@ -1,7 +1,9 @@
 ﻿
 
+[class^="tocolor-"] — starts with "tocolor-".
+[class*=" tocolor-"] — contains the substring "tocolor-" occurring directly after a space character.
 
-
+==================================================================================
 clear focus
 
 input:focus {

@@ -1,0 +1,4 @@
+curl -v -X GET "https://bblapim.azure-api.net/api/MarketService/ServiceVersion" -H "Ocp-Apim-Subscription-Key:c7b43144b11b47e0bca746d669f0ae17"
+
+
+80D9D625DD5F3A5C790DB2B0BB13EF4C413FCD1A

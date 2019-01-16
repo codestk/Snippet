@@ -1,4 +1,18 @@
-﻿Add Comma
+﻿Query string
+  function getUrlVars() {
+            var vars = [], hash;
+            var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            for (var i = 0; i < hashes.length; i++) {
+                hash = hashes[i].split('=');
+                vars.push(hash[0]);
+                vars[hash[0]] = hash[1];
+            }
+            return vars;
+        }
+        var _PicturePath = getUrlVars()["PicturePath"];
+        var _Scroll = getUrlVars()["Scroll"];
+================================================================
+Add Comma
  <input type="text" id="textfield"  onkeyup = "javascript:this.value=Comma(this.value);" >
  function Comma(Num) { //function to add commas to textboxes
         Num += '';

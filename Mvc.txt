@@ -1,1 +1,13 @@
-     @Html.TextBox("billing_point", ViewBag.billing_point as string, new { @class = "form-control", autocomplete = "off", required = string.Empty, data_fv_notempty_message = "*" })
+﻿  <div class="col-lg-3" style="text-align:right;">
+@Html.ActionLink("Delete", "DeleteList", "List", new object { }, new { @class = "btn btn-success" })
+  </div>
+
+
+===============================================================================
+REdircet to modal
+  @Html.ActionLink("ยกเลิก", "Billing_list_view", "Transport", new { @class = "btn btn-danger" })
+
+===============================================================================
+text box
+ @Html.TextBox("billing_point", ViewBag.CurrentFilter as string, new { @class = "form-horizontal bv-form" })
+===============================================================================

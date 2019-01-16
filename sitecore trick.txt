@@ -1,0 +1,26 @@
+icon menu
+/sitecore/client/Applications/Launchpad/PageSettings/Buttons/Forms Report   <<<  
+
+
+=========================================================================
+Check Image Item
+public long GetSitecoreMediaItemSizeInBytes(string itemId)
+        {
+            long mediaItemSize = 0;
+            if (Sitecore.Data.ID.IsID(itemId))
+            {
+                Item sitecoreItem = Sitecore.Context.Database.GetItem(Sitecore.Data.ID.Parse(itemId));
+                if (sitecoreItem != null)
+                {
+                    MediaItem mediaItem = new MediaItem(sitecoreItem);
+                    mediaItemSize = mediaItem.Size;                   
+                }
+                else
+                {
+                    Sitecore.Diagnostics.Log.Error("Could not find given sitecore media item with id '" + itemId + "' ", this);
+                }
+            }
+            return mediaItemSize;
+        }
+
+=============================================================================

@@ -1,4 +1,46 @@
-﻿Entity retrun Json
+﻿
+dynamic 
+
+// Create a dynamic output object
+dynamic output = new ExpandoObject();
+// Create a new array called "users"
+output.users = new dynamic[1];
+// An an object to the "users" array
+output.users[0] = new ExpandoObject();
+// Create a new property "uid" in the "users" array
+output.users[0].uid = input.username;
+This generates the following Json output:
+
+{
+    "users": [{
+        "uid": "someuser@somewhere.com"
+        }]
+}
+MORE TO READ:
+
+
+=================================================================
+
+
+  public static async Task<bool> CrateDataFromServerAsync(string url, string data)
+        {
+            string jsonString = "{\"data\":{\"PicturePath\":\"466\",\"Scroll\":\"499\"}}";
+           
+            var content = new StringContent(jsonString, Encoding.UTF8, "application/json");
+            content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+          
+            HttpClient client = new HttpClient();
+
+            client.BaseAddress = new Uri("http://localhost:64195/");
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            HttpResponseMessage response = await client.PutAsync(url, content);
+            return true;
+        }
+
+
+=================================================================
+Entity retrun Json
   public string Index2()
         {
             univercityEntities db = new univercityEntities();
@@ -25,7 +67,7 @@
         }
 
 
-==========================================================================================================================
+=====================================================================================
 Table To List
 
    List<Dictionary<string, object>> list = new List<Dictionary<string, object>>();
